@@ -15,8 +15,6 @@
         <th>isSecurityAdmin</th>
         <th>isRestaurantAdmin</th>
         <th>isAccountsAdmin</th>
-       
-        <!-- Add more table headers as needed -->
       </tr>
     </thead>
     <tbody>
@@ -33,7 +31,8 @@
         <td>{{ u.isSecurityAdmin }}</td>
         <td>{{ u.isRestaurantAdmin }}</td>
         <td>{{ u.isAccountsAdmin }}</td>
-        <!-- Add more table cells based on your data structure -->
+        <td (click)="deleteUser(u._id)"><button (click)="deleteUser(u._id)">Delete</button></td>
+        <td ><a [routerLink]="['/users/edit/', u._id]">Edit</a></td>
       </tr>
     </tbody>
   </table>

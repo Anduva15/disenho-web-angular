@@ -11,7 +11,6 @@ import { User } from '../../interfaces/user';
 export class UserDetailComponent implements OnInit {
   user: User = {
     _id: '',
-    id: '',
     name: '',
     firstName: '',
     lastName: '',
