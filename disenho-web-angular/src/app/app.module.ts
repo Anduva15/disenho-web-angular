@@ -11,7 +11,7 @@ import { UserFormComponent } from './user/user-form/user-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +26,7 @@ import { MatSortModule } from '@angular/material/sort';
     HttpClientModule,
     BrowserAnimationsModule,
     MatTableModule,
+    FormsModule,
     MatSortModule
   ],
   providers: [],

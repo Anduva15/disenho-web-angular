@@ -1,1 +1,18 @@
-<p>user-detail works!</p>
+<div class="container">
+    <h2>User Detail</h2>
+    <div>
+      <p><strong>Name:</strong> {{ user.name }}</p>
+      <p><strong>First Name:</strong> {{ user.firstName }}</p>
+      <p><strong>Last Name:</strong> {{ user.lastName }}</p>
+      <p><strong>Employee ID:</strong> {{ user.employeeId }}</p>
+      <p><strong>Phone Number 1:</strong> {{ user.phoneNumber1 }}</p>
+      <p><strong>Phone Number 2:</strong> {{ user.phoneNumber2 }}</p>
+      <p><strong>Login:</strong> {{ user.login }}</p>
+      <p><strong>Password:</strong> {{ user.password }}</p>
+      <p><strong>System Admin:</strong> {{ user.isSystemAdmin ? 'Yes' : 'No' }}</p>
+      <p><strong>Security Admin:</strong> {{ user.isSecurityAdmin ? 'Yes' : 'No' }}</p>
+      <p><strong>Restaurant Admin:</strong> {{ user.isRestaurantAdmin ? 'Yes' : 'No' }}</p>
+      <p><strong>Accounts Admin:</strong> {{ user.isAccountsAdmin ? 'Yes' : 'No' }}</p>
+    </div>
+  </div>
+  

@@ -9,14 +9,13 @@ import { User } from '../../interfaces/user';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit{
-  dataSource: MatTableDataSource<User> | undefined;
-  displayedColumns: string[] = ['_id', 'name', 'firstName', 'lastName', 'employeeId', 'phoneNumber1', 'phoneNumber2', 'login', 'password', 'isSystemAdmin', 'isSecurityAdmin', 'isRestaurantAdmin', 'isAccountsAdmin']; // Add more columns as needed
+  user: User[] = [];
 
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
     this.userService.getUsers().subscribe(users => {
-      this.dataSource = new MatTableDataSource(users);
+      this.user = users;
     });
   }
 }
