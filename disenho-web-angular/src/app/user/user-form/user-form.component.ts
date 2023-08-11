@@ -13,6 +13,7 @@ export class UserFormComponent {
 
   user: User = {
     _id: '',
+    id: '',
     name: '',
     firstName: '',
     lastName: '',

@@ -10,7 +10,6 @@ const routes: Routes = [
   { path: 'users/:id', component: UserDetailComponent },
   { path: 'newUser', component: UserFormComponent },
   { path: 'users/edit/:id', component: UserFormComponent },
-  // You can add more routes here
   { path: '', redirectTo: '/users', pathMatch: 'full' },
 ];
 
