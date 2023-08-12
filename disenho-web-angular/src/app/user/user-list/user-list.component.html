@@ -1,42 +1,10 @@
 <div class="container">
   <h2>User List</h2>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>firstName</th>
-        <th>lastName</th>
-        <th>employeeId</th>
-        <th>phoneNumber1</th>
-        <th>phoneNumber2</th>
-        <th>login</th>
-        <th>password</th>
-        <th>isSystemAdmin</th>
-        <th>isSecurityAdmin</th>
-        <th>isRestaurantAdmin</th>
-        <th>isAccountsAdmin</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let u of user">
-        <td>{{ u.name }}</td>
-        <td>{{ u.firstName }}</td>
-        <td>{{ u.lastName }}</td>
-        <td>{{ u.employeeId }}</td>
-        <td>{{ u.phoneNumber1 }}</td>
-        <td>{{ u.phoneNumber2 }}</td>
-        <td>{{ u.login }}</td>
-        <td>{{ u.password }}</td>
-        <td>{{ u.isSystemAdmin }}</td>
-        <td>{{ u.isSecurityAdmin }}</td>
-        <td>{{ u.isRestaurantAdmin }}</td>
-        <td>{{ u.isAccountsAdmin }}</td>
-        <td (click)="deleteUser(u._id)">
-          <button (click)="deleteUser(u._id)">Delete</button>
-        </td>
-        <td><a [routerLink]="['/users/edit/', u._id]">Edit</a></td>
-        <td><a [routerLink]="['/users/', u._id]">Detail</a></td>
-      </tr>
-    </tbody>
-  </table>
+  <app-list
+    [headerItems]="interfaceProperties"
+    [items]="users"
+    [onDelete]="deleteUser"
+    [uriSingular]="uriSingular"
+    [uriPlural]="uriPlural"
+  ></app-list>
 </div>

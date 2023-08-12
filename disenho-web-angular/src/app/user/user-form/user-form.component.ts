@@ -50,12 +50,12 @@ export class UserFormComponent {
     if (this.isNew) {
       this.userService.create(omit(this.user, ['_id'])).subscribe(() => {
         // Redirect to user list after successful creation
-        this.router.navigate(['/userList']);
+        this.router.navigate(['/users']);
       });
     } else {
       this.userService.update(this.user._id, this.user).subscribe(() => {
         // Redirect to user list after successful update
-        this.router.navigate(['/userList']);
+        this.router.navigate(['/users']);
       });
     }
   }
