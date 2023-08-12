@@ -31,8 +31,11 @@
         <td>{{ u.isSecurityAdmin }}</td>
         <td>{{ u.isRestaurantAdmin }}</td>
         <td>{{ u.isAccountsAdmin }}</td>
-        <td (click)="deleteUser(u._id)"><button (click)="deleteUser(u._id)">Delete</button></td>
-        <td ><a [routerLink]="['/users/edit/', u._id]">Edit</a></td>
+        <td (click)="deleteUser(u._id)">
+          <button (click)="deleteUser(u._id)">Delete</button>
+        </td>
+        <td><a [routerLink]="['/users/edit/', u._id]">Edit</a></td>
+        <td><a [routerLink]="['/users/', u._id]">Detail</a></td>
       </tr>
     </tbody>
   </table>

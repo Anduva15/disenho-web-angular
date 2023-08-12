@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UserService } from '../../services/user.service';
-import { User } from '../../interfaces/user'; 
+import { User } from '../../interfaces/user';
 
 @Component({
   selector: 'app-user-detail',
@@ -31,11 +31,11 @@ export class UserDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
+    this.route.params.subscribe((params) => {
       if (params['id']) {
         // Load user data based on route parameter
-        const userId = +params['id'];
-        this.userService.getOneUser(userId).subscribe(user => {
+        const userId = params['id'];
+        this.userService.getOne(userId).subscribe((user) => {
           this.user = user;
         });
       }

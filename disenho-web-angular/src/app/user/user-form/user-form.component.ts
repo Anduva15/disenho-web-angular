@@ -1,16 +1,15 @@
 import { Component } from '@angular/core';
+import { omit } from 'lodash';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
-import { User } from '../../interfaces/user'; 
+import { User } from '../../interfaces/user';
 
 @Component({
   selector: 'app-user-form',
   templateUrl: './user-form.component.html',
-  styleUrls: ['./user-form.component.css']
+  styleUrls: ['./user-form.component.css'],
 })
 export class UserFormComponent {
-
-
   user: User = {
     _id: '',
     name: '',
@@ -35,11 +34,11 @@ export class UserFormComponent {
   ) {}
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
+    this.route.params.subscribe((params) => {
       if (params['id']) {
         // Load user data if editing an existing user
-        const userId = +params['id'];
-        this.userService.getOneUser(userId).subscribe(user => {
+        const userId = params['id'];
+        this.userService.getOne(userId).subscribe((user) => {
           this.user = user;
           this.isNew = false;
         });
@@ -49,14 +48,14 @@ export class UserFormComponent {
 
   onSubmit() {
     if (this.isNew) {
-      this.userService.createUser(this.user).subscribe(() => {
+      this.userService.create(omit(this.user, ['_id'])).subscribe(() => {
         // Redirect to user list after successful creation
-        this.router.navigate(['/']);
+        this.router.navigate(['/userList']);
       });
     } else {
-      this.userService.updateUser(this.user._id, this.user).subscribe(() => {
+      this.userService.update(this.user._id, this.user).subscribe(() => {
         // Redirect to user list after successful update
-        this.router.navigate(['/']);
+        this.router.navigate(['/userList']);
       });
     }
   }

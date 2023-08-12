@@ -5,7 +5,7 @@ import { UserService } from '../services/user.service';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  styleUrls: ['./user.component.css'],
 })
 export class UserComponent {
   user: User[] = [];
@@ -17,20 +17,20 @@ export class UserComponent {
   }
 
   getUsers() {
-    this.userService.getUsers().subscribe((user) => {
+    this.userService.getAll().subscribe((user) => {
       this.user = user;
-      console.log(user)
+      console.log(user);
     });
   }
 
   createUser(user: User) {
-    this.userService.createUser(user).subscribe((newUser) => {
+    this.userService.create(user).subscribe((newUser) => {
       this.user.push(newUser);
     });
   }
 
   updateUser(id: string, user: User) {
-    this.userService.updateUser(id, user).subscribe((updatedUser) => {
+    this.userService.update(id, user).subscribe((updatedUser) => {
       const index = this.user.findIndex((u) => u._id === updatedUser._id);
       if (index !== -1) {
         this.user[index] = updatedUser;
@@ -39,7 +39,7 @@ export class UserComponent {
   }
 
   deleteUser(id: string) {
-    this.userService.deleteUser(id).subscribe(() => {
+    this.userService.delete(id).subscribe(() => {
       this.user = this.user.filter((user) => user._id !== id);
     });
   }
