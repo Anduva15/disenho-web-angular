@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { User } from '../../interfaces/user';
 import { Router } from '@angular/router';
+import { USER, USERS, USER_EDIT } from '../../constants';
 
 @Component({
   selector: 'app-user-list',
@@ -10,8 +11,8 @@ import { Router } from '@angular/router';
 })
 export class UserListComponent implements OnInit {
   users: User[] = [];
-  uriSingular = 'user';
-  uriPlural = 'users';
+  uriSingular = USER;
+  uriPlural = USERS;
   interfaceProperties: string[] = [
     'Name',
     'firstName',
@@ -36,7 +37,7 @@ export class UserListComponent implements OnInit {
   }
 
   editUser(userId: string) {
-    this.router.navigate(['/user/edit', userId]); // Navigate to the edit page
+    this.router.navigate([USER_EDIT, userId]); // Navigate to the edit page
   }
 
   deleteUser = (userId: string) => {
