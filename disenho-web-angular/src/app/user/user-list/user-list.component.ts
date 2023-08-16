@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { User } from '../../interfaces/user';
 import { Router } from '@angular/router';
-import { USER, USERS, USER_EDIT } from '../../constants';
+import { USER, USERS, USER_EDIT, USER_FORM_STRUCTURE } from '../../constants';
 
 @Component({
   selector: 'app-user-list',
@@ -13,20 +13,7 @@ export class UserListComponent implements OnInit {
   users: User[] = [];
   uriSingular = USER;
   uriPlural = USERS;
-  interfaceProperties: string[] = [
-    'Name',
-    'firstName',
-    'lastName',
-    'employeeId',
-    'phoneNumber1',
-    'phoneNumber2',
-    'login',
-    'password',
-    'isSystemAdmin',
-    'isSecurityAdmin',
-    'isRestaurantAdmin',
-    'isAccountsAdmin',
-  ];
+  interfaceProperties = USER_FORM_STRUCTURE;
 
   constructor(private userService: UserService, private router: Router) {}
 

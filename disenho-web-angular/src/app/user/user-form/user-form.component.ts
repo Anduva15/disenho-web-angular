@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { omit } from 'lodash';
 import { ActivatedRoute, Router } from '@angular/router';
+
+import { USERS, USER_FORM_STRUCTURE } from 'src/app/constants';
 import { UserService } from '../../services/user.service';
 import { User } from '../../interfaces/user';
 
@@ -10,6 +12,9 @@ import { User } from '../../interfaces/user';
   styleUrls: ['./user-form.component.css'],
 })
 export class UserFormComponent {
+  isNew: boolean = true;
+  formFields = USER_FORM_STRUCTURE;
+
   user: User = {
     _id: '',
     name: '',
@@ -25,7 +30,6 @@ export class UserFormComponent {
     isRestaurantAdmin: false,
     isAccountsAdmin: false,
   };
-  isNew: boolean = true;
 
   constructor(
     private userService: UserService,
@@ -34,6 +38,7 @@ export class UserFormComponent {
   ) {}
 
   ngOnInit(): void {
+    console.log('here');
     this.route.params.subscribe((params) => {
       if (params['id']) {
         // Load user data if editing an existing user
@@ -46,16 +51,19 @@ export class UserFormComponent {
     });
   }
 
-  onSubmit() {
+  onSubmit(formData: any) {
+    // Update user data with form data
+    this.user = { ...this.user, ...formData };
+
     if (this.isNew) {
       this.userService.create(omit(this.user, ['_id'])).subscribe(() => {
         // Redirect to user list after successful creation
-        this.router.navigate(['/users']);
+        this.router.navigate([USERS]);
       });
     } else {
       this.userService.update(this.user._id, this.user).subscribe(() => {
         // Redirect to user list after successful update
-        this.router.navigate(['/users']);
+        this.router.navigate([USERS]);
       });
     }
   }

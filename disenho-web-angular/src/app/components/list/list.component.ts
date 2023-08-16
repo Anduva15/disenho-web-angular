@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { FormItem } from 'src/app/interfaces/FormItem';
 
 @Component({
   selector: 'app-list',
@@ -6,7 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./list.component.css'],
 })
 export class ListComponent {
-  @Input() headerItems: any;
+  @Input() headerItems: FormItem[] = [];
   @Input() items: any;
   @Input() uriSingular: any;
   @Input() uriPlural: any;

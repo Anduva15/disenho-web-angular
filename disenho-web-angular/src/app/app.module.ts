@@ -11,7 +11,7 @@ import { UserFormComponent } from './user/user-form/user-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListComponent } from './components/list/list.component';
 import { FormComponent } from './components/form/form.component';
 @NgModule({
@@ -31,6 +31,7 @@ import { FormComponent } from './components/form/form.component';
     BrowserAnimationsModule,
     MatTableModule,
     FormsModule,
+    ReactiveFormsModule,
     MatSortModule,
   ],
   providers: [],

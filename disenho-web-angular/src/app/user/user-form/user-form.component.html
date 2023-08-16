@@ -1,55 +1,10 @@
 <div class="container">
-    <h2>{{ isNew ? 'Add User' : 'Edit User' }}</h2>
-    <form (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" id="name" [(ngModel)]="user.name" name="name" required>
-      </div>
-      <div class="form-group">
-        <label for="firstName">First Name:</label>
-        <input type="text" id="firstName" [(ngModel)]="user.firstName" name="firstName">
-      </div>
-      <div class="form-group">
-        <label for="lastName">Last Name:</label>
-        <input type="text" id="lastName" [(ngModel)]="user.lastName" name="lastName">
-      </div>
-      <div class="form-group">
-        <label for="employeeId">Employee ID:</label>
-        <input type="text" id="employeeId" [(ngModel)]="user.employeeId" name="employeeId">
-      </div>
-      <div class="form-group">
-        <label for="phoneNumber1">Phone Number 1:</label>
-        <input type="text" id="phoneNumber1" [(ngModel)]="user.phoneNumber1" name="phoneNumber1">
-      </div>
-      <div class="form-group">
-        <label for="phoneNumber2">Phone Number 2:</label>
-        <input type="text" id="phoneNumber2" [(ngModel)]="user.phoneNumber2" name="phoneNumber2">
-      </div>
-      <div class="form-group">
-        <label for="login">Login:</label>
-        <input type="text" id="login" [(ngModel)]="user.login" name="login">
-      </div>
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" id="password" [(ngModel)]="user.password" name="password">
-      </div>
-      <div class="form-group">
-        <label for="isSystemAdmin">System Admin:</label>
-        <input type="checkbox" id="isSystemAdmin" [(ngModel)]="user.isSystemAdmin" name="isSystemAdmin">
-      </div>
-      <div class="form-group">
-        <label for="isSecurityAdmin">Security Admin:</label>
-        <input type="checkbox" id="isSecurityAdmin" [(ngModel)]="user.isSecurityAdmin" name="isSecurityAdmin">
-      </div>
-      <div class="form-group">
-        <label for="isRestaurantAdmin">Restaurant Admin:</label>
-        <input type="checkbox" id="isRestaurantAdmin" [(ngModel)]="user.isRestaurantAdmin" name="isRestaurantAdmin">
-      </div>
-      <div class="form-group">
-        <label for="isAccountsAdmin">Accounts Admin:</label>
-        <input type="checkbox" id="isAccountsAdmin" [(ngModel)]="user.isAccountsAdmin" name="isAccountsAdmin">
-      </div>
-      <button type="submit">{{ isNew ? 'Create' : 'Update' }}</button>
-    </form>
-  </div>
-  
+  <h2>{{ isNew ? "Add User" : "Edit User" }}</h2>
+  <app-form
+    (formSubmit)="onSubmit($event)"
+    [buttonText]="isNew ? 'Crear' : 'Actualizar'"
+    [formFields]="formFields"
+    [initialValues]="user"
+  >
+  </app-form>
+</div>

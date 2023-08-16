@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: USER_ADD, component: UserFormComponent },
   { path: `${USER}/:id`, component: UserDetailComponent },
   { path: `${USER_EDIT}/:id`, component: UserFormComponent },
-  { path: '', redirectTo: '/users', pathMatch: 'full' },
+  { path: '', redirectTo: USERS, pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }, // Ruta para manejar errores 404
   { path: 'server-error', component: InternalServerErrorComponent }, // Ruta para manejar errores 500
 ];
