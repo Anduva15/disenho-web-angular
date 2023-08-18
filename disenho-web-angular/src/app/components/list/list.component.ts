@@ -7,12 +7,9 @@ import { FormItem } from 'src/app/interfaces/FormItem';
   styleUrls: ['./list.component.css'],
 })
 export class ListComponent {
-  @Input() headerItems: FormItem[] = [];
+  @Input() formItems: FormItem[] = [];
   @Input() items: any;
   @Input() uriSingular: any;
   @Input() uriPlural: any;
   @Input() onDelete: Function = () => {};
-  constructor() {}
-
-  ngOnInit(): void {}
 }

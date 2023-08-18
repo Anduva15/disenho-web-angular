@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UserService } from '../../services/user.service';
 import { User } from '../../interfaces/user';
+import { USER_FORM_STRUCTURE } from 'src/app/constants';
 
 @Component({
   selector: 'app-user-detail',
@@ -9,6 +10,7 @@ import { User } from '../../interfaces/user';
   styleUrls: ['./user-detail.component.css'],
 })
 export class UserDetailComponent implements OnInit {
+  formItems = USER_FORM_STRUCTURE;
   user: User = {
     _id: '',
     name: '',

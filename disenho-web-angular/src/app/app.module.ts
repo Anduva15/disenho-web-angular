@@ -14,6 +14,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListComponent } from './components/list/list.component';
 import { FormComponent } from './components/form/form.component';
+import { DetailsComponent } from './components/details/details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { FormComponent } from './components/form/form.component';
     UserFormComponent,
     ListComponent,
     FormComponent,
+    DetailsComponent,
   ],
   imports: [
     BrowserModule,

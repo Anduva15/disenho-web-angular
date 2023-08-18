@@ -2,8 +2,8 @@
   <table class="table">
     <thead>
       <tr>
-        <th *ngFor="let headerItem of headerItems">
-          {{ headerItem.label }}
+        <th *ngFor="let formItem of formItems">
+          {{ formItem.label }}
         </th>
         <th>Borrar</th>
         <th>Editar</th>
@@ -12,8 +12,8 @@
     </thead>
     <tbody>
       <tr *ngFor="let item of items">
-        <td *ngFor="let headerItem of headerItems">
-          {{ item[headerItem.name] }}
+        <td *ngFor="let formItem of formItems">
+          {{ item[formItem.name] }}
         </td>
         <td>
           <button (click)="onDelete(item._id)">Delete</button>

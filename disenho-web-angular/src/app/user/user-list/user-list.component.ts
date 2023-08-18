@@ -13,7 +13,7 @@ export class UserListComponent implements OnInit {
   users: User[] = [];
   uriSingular = USER;
   uriPlural = USERS;
-  interfaceProperties = USER_FORM_STRUCTURE;
+  formItems = USER_FORM_STRUCTURE;
 
   constructor(private userService: UserService, private router: Router) {}
 
