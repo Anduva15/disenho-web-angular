@@ -67,3 +67,35 @@ export const USER_FORM_STRUCTURE: FormItem[] = [
     inputType: 'checkbox',
   },
 ];
+
+export const RESTAURANT = 'restaurant';
+export const RESTAURANTS = 'restaurants';
+export const RESTAURANT_ADD: string = 'restaurant/add';
+export const RESTAURANT_EDIT: string = 'restaurant/edit';
+
+export const RESTAURANT_FORM_STRUCTURE: FormItem[] = [
+  {
+    name: 'name',
+    label: 'Nombre',
+    inputType: 'text',
+    // validators: [Validators.required],
+  },
+  {
+    name: 'address',
+    label: 'Direccion',
+    inputType: 'text',
+    // validators: [Validators.required],
+  },
+  {
+    name: 'phone',
+    label: 'Telefono',
+    inputType: 'text',
+    // validators: [Validators.required],
+  },
+  {
+    name: 'clientsAmount',
+    label: 'Cantidad de clientes',
+    inputType: 'text',
+    // validators: [Validators.required],
+  },
+];

@@ -1,0 +1,10 @@
+<div class="container">
+  <h2>{{ isNew ? "Add User" : "Edit User" }}</h2>
+  <app-form
+    (formSubmit)="onSubmit($event)"
+    [buttonText]="isNew ? 'Crear' : 'Actualizar'"
+    [formFields]="RESTAURANT_FORM_STRUCTURE"
+    [initialValues]="restaurant"
+  >
+  </app-form>
+</div>

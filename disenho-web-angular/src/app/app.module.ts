@@ -15,6 +15,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListComponent } from './components/list/list.component';
 import { FormComponent } from './components/form/form.component';
 import { DetailsComponent } from './components/details/details.component';
+import { RestaurantComponent } from './restaurant/restaurant.component';
+import { RestaurantListComponent } from './restaurant/restaurant-list/restaurant-list.component';
+import { RestaurantFormComponent } from './restaurant/restaurant-form/restaurant-form.component';
+import { RestaurantDetailComponent } from './restaurant/restaurant-detail/restaurant-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +29,10 @@ import { DetailsComponent } from './components/details/details.component';
     ListComponent,
     FormComponent,
     DetailsComponent,
+    RestaurantComponent,
+    RestaurantListComponent,
+    RestaurantFormComponent,
+    RestaurantDetailComponent,
   ],
   imports: [
     BrowserModule,

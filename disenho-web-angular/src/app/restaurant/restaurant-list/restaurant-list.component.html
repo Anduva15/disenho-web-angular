@@ -1,0 +1,10 @@
+<div class="container">
+  <h2>User List</h2>
+  <app-list
+    [formItems]="RESTAURANT_FORM_STRUCTURE"
+    [items]="restaurants"
+    [onDelete]="deleteRestaurant"
+    [uriSingular]="RESTAURANT"
+    [uriPlural]="RESTAURANTS"
+  ></app-list>
+</div>

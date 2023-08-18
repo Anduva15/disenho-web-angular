@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { USERS, USER_ADD } from '../constants';
+import { USERS, USER_ADD, RESTAURANTS, RESTAURANT_ADD } from '../constants';
 
 @Component({
   selector: 'app-user',
@@ -7,7 +7,9 @@ import { USERS, USER_ADD } from '../constants';
   styleUrls: ['./user.component.css'],
 })
 export class UserComponent {
-  userAddUrl = USER_ADD;
-  usersUrl = USERS;
+  USERS = USERS;
+  USER_ADD = USER_ADD;
+  RESTAURANTS = RESTAURANTS;
+  RESTAURANT_ADD = RESTAURANT_ADD;
   constructor() {}
 }

@@ -11,9 +11,9 @@ import { USER, USERS, USER_EDIT, USER_FORM_STRUCTURE } from '../../constants';
 })
 export class UserListComponent implements OnInit {
   users: User[] = [];
-  uriSingular = USER;
-  uriPlural = USERS;
-  formItems = USER_FORM_STRUCTURE;
+  USER = USER;
+  USERS = USERS;
+  USER_FORM_STRUCTURE = USER_FORM_STRUCTURE;
 
   constructor(private userService: UserService, private router: Router) {}
 

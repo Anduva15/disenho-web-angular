@@ -10,7 +10,7 @@ import { USER_FORM_STRUCTURE } from 'src/app/constants';
   styleUrls: ['./user-detail.component.css'],
 })
 export class UserDetailComponent implements OnInit {
-  formItems = USER_FORM_STRUCTURE;
+  USER_FORM_STRUCTURE = USER_FORM_STRUCTURE;
   user: User = {
     _id: '',
     name: '',
