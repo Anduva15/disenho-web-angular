@@ -1,3 +1,24 @@
 #base-div-error500{
     text-align: center;
 }
+
+#internal-server-error_div_home_button{
+    text-align: center;
+}
+
+.internal-server-error_buttons{
+    padding-top: 10px;
+    padding-left: 90px;
+    padding-bottom: 10px;
+    padding-right: 90px;
+
+    border-radius: 5px;
+    background-color:palegreen;
+
+    color: black;
+    border: 0px;
+}
+
+.internal-server-error_buttons:hover{
+    background-color:forestgreen;
+}
