@@ -24,7 +24,7 @@ const routes: Routes = [
     //LOGIN
     { path: "login", component: LoginComponent },
   // USERS
-  { path: USERS, component: UserListComponent },
+  { path: "users", component: UserListComponent },
   { path: USER_ADD, component: UserFormComponent },
   { path: `${USER}/:id`, component: UserDetailComponent },
   { path: `${USER_EDIT}/:id`, component: UserFormComponent },
@@ -35,7 +35,7 @@ const routes: Routes = [
   { path: `${RESTAURANT_EDIT}/:id`, component: RestaurantFormComponent },
 
   // REST
-  { path: '', redirectTo: USERS, pathMatch: 'full' },
+  { path: '', component: LoginComponent},
   { path: '**', component: PageNotFoundComponent }, // Ruta para manejar errores 404
   { path: 'server-error', component: InternalServerErrorComponent }, // Ruta para manejar errores 500
 ];
