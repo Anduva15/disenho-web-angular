@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './auth.interceptor';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
-import { HttpClientModule } from '@angular/common/http';
+
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserFormComponent } from './user/user-form/user-form.component';
@@ -19,6 +20,9 @@ import { RestaurantComponent } from './restaurant/restaurant.component';
 import { RestaurantListComponent } from './restaurant/restaurant-list/restaurant-list.component';
 import { RestaurantFormComponent } from './restaurant/restaurant-form/restaurant-form.component';
 import { RestaurantDetailComponent } from './restaurant/restaurant-detail/restaurant-detail.component';
+import { LoginComponent } from './components/login/login.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +37,7 @@ import { RestaurantDetailComponent } from './restaurant/restaurant-detail/restau
     RestaurantListComponent,
     RestaurantFormComponent,
     RestaurantDetailComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +49,11 @@ import { RestaurantDetailComponent } from './restaurant/restaurant-detail/restau
     ReactiveFormsModule,
     MatSortModule,
   ],
-  providers: [],
+  providers: [     {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true,
+  },],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
