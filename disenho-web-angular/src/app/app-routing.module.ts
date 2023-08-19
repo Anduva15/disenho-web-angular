@@ -19,7 +19,7 @@ import { InternalServerErrorComponent } from './internal-server-error/internal-s
 import { RestaurantListComponent } from './restaurant/restaurant-list/restaurant-list.component';
 import { RestaurantDetailComponent } from './restaurant/restaurant-detail/restaurant-detail.component';
 import { RestaurantFormComponent } from './restaurant/restaurant-form/restaurant-form.component';
-
+import { LoginComponent } from './components/login/login.component';
 const routes: Routes = [
   // USERS
   { path: USERS, component: UserListComponent },
@@ -31,6 +31,8 @@ const routes: Routes = [
   { path: RESTAURANT_ADD, component: RestaurantFormComponent },
   { path: `${RESTAURANT}/:id`, component: RestaurantDetailComponent },
   { path: `${RESTAURANT_EDIT}/:id`, component: RestaurantFormComponent },
+  //LOGIN
+  { path: "login", component: LoginComponent },
   // REST
   { path: '', redirectTo: USERS, pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }, // Ruta para manejar errores 404
