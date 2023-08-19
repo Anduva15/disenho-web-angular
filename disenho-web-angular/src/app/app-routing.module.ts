@@ -21,6 +21,8 @@ import { RestaurantDetailComponent } from './restaurant/restaurant-detail/restau
 import { RestaurantFormComponent } from './restaurant/restaurant-form/restaurant-form.component';
 import { LoginComponent } from './components/login/login.component';
 const routes: Routes = [
+    //LOGIN
+    { path: "login", component: LoginComponent },
   // USERS
   { path: USERS, component: UserListComponent },
   { path: USER_ADD, component: UserFormComponent },
@@ -31,8 +33,7 @@ const routes: Routes = [
   { path: RESTAURANT_ADD, component: RestaurantFormComponent },
   { path: `${RESTAURANT}/:id`, component: RestaurantDetailComponent },
   { path: `${RESTAURANT_EDIT}/:id`, component: RestaurantFormComponent },
-  //LOGIN
-  { path: "login", component: LoginComponent },
+
   // REST
   { path: '', redirectTo: USERS, pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }, // Ruta para manejar errores 404
