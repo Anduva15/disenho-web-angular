@@ -20,9 +20,16 @@ import { RestaurantListComponent } from './restaurant/restaurant-list/restaurant
 import { RestaurantDetailComponent } from './restaurant/restaurant-detail/restaurant-detail.component';
 import { RestaurantFormComponent } from './restaurant/restaurant-form/restaurant-form.component';
 import { LoginComponent } from './components/login/login.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { SeguridadComponent } from './components/seguridad/seguridad.component';
+
 const routes: Routes = [
     //LOGIN
     { path: "login", component: LoginComponent },
+    //Menu
+    { path: "menu", component: MenuComponent },
+     //Seguridad
+     { path: "seguridad", component: SeguridadComponent },
   // USERS
   { path: "users", component: UserListComponent },
   { path: USER_ADD, component: UserFormComponent },
