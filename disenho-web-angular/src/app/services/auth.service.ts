@@ -29,4 +29,10 @@ export class AuthService {
       }
     );
   }
+
+  logout(): void {
+    localStorage.removeItem('auth_token');
+    // Redirect to login page
+    this.router.navigate(['/login']);
+  }
 }

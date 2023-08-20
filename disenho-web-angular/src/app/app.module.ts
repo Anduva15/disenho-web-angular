@@ -23,6 +23,7 @@ import { RestaurantDetailComponent } from './restaurant/restaurant-detail/restau
 import { LoginComponent } from './components/login/login.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { SeguridadComponent } from './components/seguridad/seguridad.component';
+import { LogoutButtonComponent } from './components/logout-button/logout-button.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { SeguridadComponent } from './components/seguridad/seguridad.component';
     RestaurantDetailComponent,
     LoginComponent,
     MenuComponent,
-    SeguridadComponent
+    SeguridadComponent,
+    LogoutButtonComponent
   ],
   imports: [
     BrowserModule,
