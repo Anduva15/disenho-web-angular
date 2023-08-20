@@ -99,3 +99,71 @@ export const RESTAURANT_FORM_STRUCTURE: FormItem[] = [
     // validators: [Validators.required],
   },
 ];
+
+
+export const ACCOUNT = 'account';
+export const ACCOUNTS = 'accounts';
+export const ACCOUNT_ADD: string = 'account/add';
+export const ACCOUNT_EDIT: string = 'account/edit';
+
+export const ACCOUNT_FORM_STRUCTURE: FormItem[] = [
+  {
+    name: 'name',
+    label: 'Nombre',
+    inputType: 'text',
+    // validators: [Validators.required],
+  },
+  // se necesita ???
+  {
+    name: 'firstName',
+    label: 'Primer Nombre',
+    inputType: 'text',
+    // validators: [Validators.required, Validators.email],
+  },
+  {
+    name: 'lastName',
+    label: 'Apellido',
+    inputType: 'text',
+  },
+  {
+    name: 'phoneNumber1',
+    label: 'Numero Telefonico 1',
+    inputType: 'text',
+    // validators: [Validators.required, Validators.minLength(6)],
+  },
+  {
+    name: 'phoneNumber2',
+    label: 'Numero Telefonico 2',
+    inputType: 'text',
+  },
+  {
+    name: 'login',
+    label: 'Login',
+    inputType: 'text',
+  },
+  {
+    name: 'password',
+    label: 'Password',
+    inputType: 'password',
+  },
+  {
+    name: 'isSystemAdmin',
+    label: 'System Admin',
+    inputType: 'checkbox',
+  },
+  {
+    name: 'isSecurityAdmin',
+    label: 'Security Admin',
+    inputType: 'checkbox',
+  },
+  {
+    name: 'isRestaurantAdmin',
+    label: 'Restaurant Admin',
+    inputType: 'checkbox',
+  },
+  {
+    name: 'isAccountsAdmin',
+    label: 'Account Admin',
+    inputType: 'checkbox',
+  },
+];

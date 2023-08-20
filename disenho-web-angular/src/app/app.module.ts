@@ -24,6 +24,10 @@ import { LoginComponent } from './components/login/login.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { SeguridadComponent } from './components/seguridad/seguridad.component';
 import { LogoutButtonComponent } from './components/logout-button/logout-button.component';
+import { AccountComponent } from './components/account/account.component';
+import { AccountListComponent } from './components/account/account-list/account-list.component';
+import { AccountFormComponent } from './components/account/account-form/account-form.component';
+import { AccountDetailComponent } from './components/account/account-detail/account-detail.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +46,11 @@ import { LogoutButtonComponent } from './components/logout-button/logout-button.
     LoginComponent,
     MenuComponent,
     SeguridadComponent,
-    LogoutButtonComponent
+    LogoutButtonComponent,
+    AccountComponent,
+    AccountListComponent,
+    AccountFormComponent,
+    AccountDetailComponent
   ],
   imports: [
     BrowserModule,
