@@ -1,7 +1,7 @@
 import { Client } from "./client";
 
 export interface Account {
-    id: String,
+_id: string; // MongoDB ObjectId
   totalAmount: Number,
   clients: Array<Client>,
   entryDate: Date,

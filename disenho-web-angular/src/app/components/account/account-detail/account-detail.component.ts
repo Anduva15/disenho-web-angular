@@ -11,7 +11,7 @@ import { ACCOUNT, ACCOUNT_ADD,  ACCOUNT_FORM_STRUCTURE} from '../../../constants
 export class AccountDetailComponent {
   RESTAURANT_FORM_STRUCTURE = ACCOUNT_FORM_STRUCTURE;
   account: Account = {
-    id: "",
+    _id: "",
     totalAmount: 0,
     clients: [],
     entryDate: new Date(NaN),
