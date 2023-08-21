@@ -1,0 +1,11 @@
+<app-product></app-product>
+<div class="container">
+  <h2>Product List</h2>
+  <app-list
+    [formItems]="PRODUCT_FORM_STRUCTURE"
+    [items]="products"
+    [onDelete]="deleteUser"
+    [uriSingular]="PRODUCT"
+    [uriPlural]="PRODUCTS"
+  ></app-list>
+</div>

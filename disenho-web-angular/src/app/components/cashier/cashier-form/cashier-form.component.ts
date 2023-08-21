@@ -33,7 +33,6 @@ export class CashierFormComponent {
   ) {}
 
   ngOnInit(): void {
-    console.log('here');
     this.route.params.subscribe((params) => {
       if (params['id']) {
         // Load user data if editing an existing user

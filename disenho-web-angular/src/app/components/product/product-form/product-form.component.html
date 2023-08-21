@@ -1,0 +1,11 @@
+<app-product></app-product>
+<div class="container">
+  <h2>{{ isNew ? "Add Product" : "Edit Product" }}</h2>
+  <app-form
+    (formSubmit)="onSubmit($event)"
+    [buttonText]="isNew ? 'Crear' : 'Actualizar'"
+    [formFields]="formFields"
+    [initialValues]="product"
+  >
+  </app-form>
+</div>

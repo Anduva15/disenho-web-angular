@@ -422,7 +422,7 @@ export const POSITION_FORM_STRUCTURE: FormItem[] = [
 
 //PRODUCT
 
-export const PRODUCT = 'positiproducton';
+export const PRODUCT = 'product';
 export const PRODUCTS = 'products';
 export const PRODUCT_ADD: string = 'product/add';
 export const PRODUCT_EDIT: string = 'product/edit';

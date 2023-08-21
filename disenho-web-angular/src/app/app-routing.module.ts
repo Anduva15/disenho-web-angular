@@ -16,6 +16,10 @@ import {
   USERS,
   USER_ADD,
   USER_EDIT,
+  PRODUCTS,
+  PRODUCT_ADD,
+  PRODUCT,
+  PRODUCT_EDIT,
 } from './constants';
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -23,10 +27,12 @@ import { InternalServerErrorComponent } from './internal-server-error/internal-s
 import { RestaurantListComponent } from './components/restaurant/restaurant-list/restaurant-list.component';
 import { RestaurantDetailComponent } from './components/restaurant/restaurant-detail/restaurant-detail.component';
 import { RestaurantFormComponent } from './components/restaurant/restaurant-form/restaurant-form.component';
-
 import { CashierListComponent } from './components/cashier/cashier-list/cashier-list.component';
 import { CashierDetailComponent } from './components/cashier/cashier-detail/cashier-detail.component';
 import { CashierFormComponent } from './components/cashier/cashier-form/cashier-form.component';
+import { ProductListComponent } from './components/product/product-list/product-list.component';
+import { ProductDetailComponent } from './components/product/product-detail/product-detail.component';
+import { ProductFormComponent } from './components/product/product-form/product-form.component';
 
 import { LoginComponent } from './components/login/login.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -54,6 +60,11 @@ const routes: Routes = [
   { path: CASHIER_ADD, component: CashierFormComponent },
   { path: `${CASHIER}/:id`, component: CashierDetailComponent },
   { path: `${CASHIER_EDIT}/:id`, component: CashierFormComponent },
+  // PRODUCT
+  { path: PRODUCTS, component: ProductListComponent },
+  { path: PRODUCT_ADD, component: ProductFormComponent },
+  { path: `${PRODUCT}/:id`, component: ProductDetailComponent },
+  { path: `${PRODUCT_EDIT}/:id`, component: ProductFormComponent },
   // REST
   { path: '', component: LoginComponent },
   { path: '**', component: PageNotFoundComponent }, // Ruta para manejar errores 404

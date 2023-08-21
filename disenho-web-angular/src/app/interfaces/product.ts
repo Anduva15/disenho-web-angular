@@ -1,19 +1,20 @@
 export interface Product {
-    name: String,
-  description: String,
-  category: String,
-  type: String,
-  price: Number,
-  pricePerUnit: Number,
-  ingredients: String,
-  edibleLine: String,
-  edibleClass: String,
-  picture: String,
-  year: Date,
-  measurementUnit: String,
-  quantity: Number,
-  nationality: String,
-  restaurantId: Array<Number>,
-  providerId: Array<Number>,
-  brandId: String,
+  id: number;
+  name: string;
+  description: string;
+  category: string;
+  type: string;
+  price: number;
+  pricePerUnit: number;
+  ingredients: string;
+  edibleLine: string;
+  edibleClass: string;
+  picture: string;
+  year: Date;
+  measurementUnit: string;
+  quantity: number;
+  nationality: string;
+  restaurantId: Array<number>;
+  providerId: Array<number>;
+  brandId: string;
 }

@@ -33,7 +33,6 @@ export class AccountFormComponent {
   ) {}
 
   ngOnInit(): void {
-    console.log('here');
     this.route.params.subscribe((params) => {
       if (params['id']) {
         // Load restaurant data if editing an existing user

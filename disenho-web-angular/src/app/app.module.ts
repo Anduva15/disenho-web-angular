@@ -20,12 +20,14 @@ import { RestaurantComponent } from './components/restaurant/restaurant.componen
 import { RestaurantListComponent } from './components/restaurant/restaurant-list/restaurant-list.component';
 import { RestaurantFormComponent } from './components/restaurant/restaurant-form/restaurant-form.component';
 import { RestaurantDetailComponent } from './components/restaurant/restaurant-detail/restaurant-detail.component';
-
 import { CashierComponent } from './components/cashier/cashier.component';
 import { CashierListComponent } from './components/cashier/cashier-list/cashier-list.component';
 import { CashierFormComponent } from './components/cashier/cashier-form/cashier-form.component';
 import { CashierDetailComponent } from './components/cashier/cashier-detail/cashier-detail.component';
-
+import { ProductComponent } from './components/product/product.component';
+import { ProductListComponent } from './components/product/product-list/product-list.component';
+import { ProductFormComponent } from './components/product/product-form/product-form.component';
+import { ProductDetailComponent } from './components/product/product-detail/product-detail.component';
 import { LoginComponent } from './components/login/login.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { SeguridadComponent } from './components/seguridad/seguridad.component';
@@ -49,6 +51,10 @@ import { AccountDetailComponent } from './components/account/account-detail/acco
     RestaurantListComponent,
     RestaurantFormComponent,
     RestaurantDetailComponent,
+    ProductComponent,
+    ProductListComponent,
+    ProductFormComponent,
+    ProductDetailComponent,
     CashierComponent,
     CashierListComponent,
     CashierFormComponent,
