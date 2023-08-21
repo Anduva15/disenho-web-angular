@@ -14,10 +14,10 @@ export class UserService extends BaseService<User> {
     super(http, USER, USERS);
   }
 
-  override create(user: Omit<User, '_id'>): Observable<User> {
+  override create(user: Omit<User, 'id'>): Observable<User> {
     const saltRounds = 10;
 
-    return new Observable<User>(observer => {
+    return new Observable<User>((observer) => {
       bcrypt.genSalt(saltRounds, (err, salt) => {
         if (err) {
           observer.error(err);
@@ -27,16 +27,16 @@ export class UserService extends BaseService<User> {
               observer.error(err);
             } else {
               const userWithHashedPassword: User = {
-                ...user as User,
+                ...(user as User),
                 password: hash,
               };
 
               super.create(userWithHashedPassword).subscribe(
-                createdUser => {
+                (createdUser) => {
                   observer.next(createdUser);
                   observer.complete();
                 },
-                error => {
+                (error) => {
                   observer.error(error);
                 }
               );

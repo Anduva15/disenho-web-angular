@@ -3,27 +3,27 @@ import { omit } from 'lodash';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AccountService } from '../../../services/account.service';
 import { Account } from '../../../interfaces/account';
-import { ACCOUNT, ACCOUNTS, ACCOUNT_ADD,  ACCOUNT_FORM_STRUCTURE} from '../../../constants';
+import { ACCOUNTS, ACCOUNT_FORM_STRUCTURE } from '../../../constants';
 @Component({
   selector: 'app-account-form',
   templateUrl: './account-form.component.html',
-  styleUrls: ['./account-form.component.css']
+  styleUrls: ['./account-form.component.css'],
 })
 export class AccountFormComponent {
   isNew: boolean = true;
   RESTAURANT_FORM_STRUCTURE = ACCOUNT_FORM_STRUCTURE;
 
   account: Account = {
-    _id: "",
+    id: 0,
     totalAmount: 0,
     clients: [],
     entryDate: new Date(NaN),
     exitDate: new Date(NaN),
     reservationDate: new Date(NaN),
-    reservationId: "",
+    reservationId: '',
     bar: false,
-    restaurantId: "String",
-    status: "String",
+    restaurantId: 'String',
+    status: 'String',
   };
 
   constructor(
@@ -51,15 +51,13 @@ export class AccountFormComponent {
     this.account = { ...this.account, ...formData };
 
     if (this.isNew) {
-      this.accountService
-        .create(omit(this.account, ['_id']))
-        .subscribe(() => {
-          // Redirect to user list after successful creation
-          this.router.navigate([ACCOUNTS]);
-        });
+      this.accountService.create(omit(this.account, ['id'])).subscribe(() => {
+        // Redirect to user list after successful creation
+        this.router.navigate([ACCOUNTS]);
+      });
     } else {
       this.accountService
-        .update(this.account._id, this.account)
+        .update(this.account.id, this.account)
         .subscribe(() => {
           // Redirect to user list after successful update
           this.router.navigate([ACCOUNTS]);

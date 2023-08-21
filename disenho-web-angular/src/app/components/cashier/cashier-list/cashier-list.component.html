@@ -1,0 +1,11 @@
+<app-cashier></app-cashier>
+<div class="container">
+  <h2>Cashier List</h2>
+  <app-list
+    [formItems]="CASHIER_FORM_STRUCTURE"
+    [items]="cashiers"
+    [onDelete]="deleteCashier"
+    [uriSingular]="CASHIER"
+    [uriPlural]="CASHIERS"
+  ></app-list>
+</div>

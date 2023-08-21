@@ -1,5 +1,5 @@
 export interface Restaurant {
-  _id: string; // MongoDB ObjectId
+  id: number; // MongoDB ObjectId
   name: string;
   address: string;
   phone: string;

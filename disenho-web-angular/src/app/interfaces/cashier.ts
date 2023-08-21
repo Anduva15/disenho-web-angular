@@ -1,10 +1,10 @@
 export interface Cashier {
-    id: String,
-    registrationDate: String,
-    description: String,
-    startingMoney: Number,
-    closingMoney: Number,
-    cashierOpeningDate: Date,
-    cashierClosingDate: Date,
-    restaurantId: String,
+  id: number;
+  registrationDate: string;
+  description: string;
+  startingMoney: number;
+  closingMoney: number;
+  cashierOpeningDate: Date;
+  cashierClosingDate: Date;
+  restaurantId: string;
 }

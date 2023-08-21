@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { USERS, USER_ADD, RESTAURANTS, RESTAURANT_ADD } from '../constants';
+import { USERS, USER_ADD, RESTAURANTS, RESTAURANT_ADD } from '../../constants';
 
 @Component({
   selector: 'app-user',

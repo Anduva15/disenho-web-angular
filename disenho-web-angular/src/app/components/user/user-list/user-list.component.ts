@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../services/user.service';
-import { User } from '../../interfaces/user';
+import { UserService } from '../../../services/user.service';
+import { User } from '../../../interfaces/user';
 import { Router } from '@angular/router';
-import { USER, USERS, USER_EDIT, USER_FORM_STRUCTURE } from '../../constants';
+import {
+  USER,
+  USERS,
+  USER_EDIT,
+  USER_FORM_STRUCTURE,
+} from '../../../constants';
 
 @Component({
   selector: 'app-user-list',

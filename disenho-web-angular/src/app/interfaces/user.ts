@@ -1,5 +1,5 @@
 export interface User {
-  _id: string; // MongoDB ObjectId
+  id: number; // MongoDB ObjectId
   name: string;
   firstName: string;
   lastName: String;

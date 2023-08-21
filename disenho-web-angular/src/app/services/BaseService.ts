@@ -29,7 +29,7 @@ export class BaseService<T> {
     return this.http.get<T>(`${this.apiUrlSingular}/${id}`);
   }
 
-  create(data: Omit<T, '_id'>): Observable<T> {
+  create(data: Omit<T, 'id'>): Observable<T> {
     return this.http.post<T>(this.apiUrlSingular, data);
   }
 

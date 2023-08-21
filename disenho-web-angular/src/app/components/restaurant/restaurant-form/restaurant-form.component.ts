@@ -3,8 +3,8 @@ import { omit } from 'lodash';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { RESTAURANTS, RESTAURANT_FORM_STRUCTURE } from 'src/app/constants';
-import { RestaurantService } from '../../services/restaurant.service';
-import { Restaurant } from '../../interfaces/restaurant';
+import { RestaurantService } from '../../../services/restaurant.service';
+import { Restaurant } from '../../../interfaces/restaurant';
 
 @Component({
   selector: 'app-restaurant-form',
@@ -16,7 +16,7 @@ export class RestaurantFormComponent {
   RESTAURANT_FORM_STRUCTURE = RESTAURANT_FORM_STRUCTURE;
 
   restaurant: Restaurant = {
-    _id: '',
+    id: 0,
     name: '',
     address: '',
     phone: '',
@@ -49,14 +49,14 @@ export class RestaurantFormComponent {
 
     if (this.isNew) {
       this.restaurantService
-        .create(omit(this.restaurant, ['_id']))
+        .create(omit(this.restaurant, ['id']))
         .subscribe(() => {
           // Redirect to user list after successful creation
           this.router.navigate([RESTAURANTS]);
         });
     } else {
       this.restaurantService
-        .update(this.restaurant._id, this.restaurant)
+        .update(this.restaurant.id, this.restaurant)
         .subscribe(() => {
           // Redirect to user list after successful update
           this.router.navigate([RESTAURANTS]);

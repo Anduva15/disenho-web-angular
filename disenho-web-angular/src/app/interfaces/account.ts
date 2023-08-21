@@ -1,14 +1,14 @@
-import { Client } from "./client";
+import { Client } from './client';
 
 export interface Account {
-_id: string; // MongoDB ObjectId
-  totalAmount: Number,
-  clients: Array<Client>,
-  entryDate: Date,
-  exitDate: Date,
-  reservationDate: Date,
-  reservationId: String,
-  bar: Boolean,
-  restaurantId: String,
-  status: String,
+  id: number; // MongoDB ObjectId
+  totalAmount: number;
+  clients: Array<Client>;
+  entryDate: Date;
+  exitDate: Date;
+  reservationDate: Date;
+  reservationId: string;
+  bar: Boolean;
+  restaurantId: string;
+  status: string;
 }

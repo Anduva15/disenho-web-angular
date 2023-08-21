@@ -3,8 +3,8 @@ import { omit } from 'lodash';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { USERS, USER_FORM_STRUCTURE } from 'src/app/constants';
-import { UserService } from '../../services/user.service';
-import { User } from '../../interfaces/user';
+import { UserService } from '../../../services/user.service';
+import { User } from '../../../interfaces/user';
 
 @Component({
   selector: 'app-user-form',
@@ -16,7 +16,7 @@ export class UserFormComponent {
   formFields = USER_FORM_STRUCTURE;
 
   user: User = {
-    _id: '',
+    id: 0,
     name: '',
     firstName: '',
     lastName: '',
@@ -56,12 +56,12 @@ export class UserFormComponent {
     this.user = { ...this.user, ...formData };
 
     if (this.isNew) {
-      this.userService.create(omit(this.user, ['_id'])).subscribe(() => {
+      this.userService.create(omit(this.user, ['id'])).subscribe(() => {
         // Redirect to user list after successful creation
         this.router.navigate([USERS]);
       });
     } else {
-      this.userService.update(this.user._id, this.user).subscribe(() => {
+      this.userService.update(this.user.id, this.user).subscribe(() => {
         // Redirect to user list after successful update
         this.router.navigate([USERS]);
       });

@@ -256,7 +256,6 @@ export const CASHIER_FORM_STRUCTURE: FormItem[] = [
   },
 ];
 
-
 //CLIENT
 
 export const CLIENT = 'client';
@@ -302,7 +301,6 @@ export const CLIENT_FORM_STRUCTURE: FormItem[] = [
   },
 ];
 
-
 //COUNTRY
 
 export const COUNTRY = 'country';
@@ -329,7 +327,8 @@ export const EMPLOYEE_FORM_STRUCTURE: FormItem[] = [
     name: 'idCardNumber',
     label: 'idCardNumber',
     inputType: 'text',
-  }, {
+  },
+  {
     name: 'name',
     label: 'name',
     inputType: 'text',
@@ -364,7 +363,7 @@ export const EMPLOYEE_FORM_STRUCTURE: FormItem[] = [
     label: 'positionId',
     inputType: 'text',
   },
-]
+];
 
 //MEASUREMENTUNIT
 
@@ -390,7 +389,6 @@ export const MEASUREMENTUNIT_FORM_STRUCTURE: FormItem[] = [
     inputType: 'text',
   },
 ];
-
 
 //POSITION
 
@@ -419,7 +417,7 @@ export const POSITION_FORM_STRUCTURE: FormItem[] = [
     name: 'isRestaurantInternal',
     label: 'isRestaurantInternal',
     inputType: 'text',
-  }
+  },
 ];
 
 //PRODUCT
@@ -449,7 +447,8 @@ export const PRODUCT_FORM_STRUCTURE: FormItem[] = [
     name: 'type',
     label: 'type',
     inputType: 'text',
-  },   {
+  },
+  {
     name: 'price',
     label: 'price',
     inputType: 'text',
@@ -513,7 +512,7 @@ export const PRODUCT_FORM_STRUCTURE: FormItem[] = [
     name: 'brandId',
     label: 'brandId',
     inputType: 'text',
-  }
+  },
 ];
 
 //PROVIDER
@@ -543,7 +542,8 @@ export const PROVIDER_FORM_STRUCTURE: FormItem[] = [
     name: 'officePhoneNumber',
     label: 'officePhoneNumber',
     inputType: 'text',
-  },{
+  },
+  {
     name: 'fax',
     label: 'fax',
     inputType: 'text',
@@ -567,9 +567,8 @@ export const PROVIDER_FORM_STRUCTURE: FormItem[] = [
     name: 'brands',
     label: 'brands',
     inputType: 'text',
-  }
+  },
 ];
-
 
 //Report
 
@@ -593,7 +592,7 @@ export const REPORT_FORM_STRUCTURE: FormItem[] = [
     name: 'userId',
     label: 'userId',
     inputType: 'text',
-  }
+  },
 ];
 
 //RESERVATION
@@ -645,7 +644,6 @@ export const ROLE_FORM_STRUCTURE: FormItem[] = [
     inputType: 'text',
   },
 ];
-
 
 //TABLE
 

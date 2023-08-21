@@ -1,0 +1,11 @@
+<app-user></app-user>
+<div class="container">
+  <h2>{{ isNew ? "Add User" : "Edit User" }}</h2>
+  <app-form
+    (formSubmit)="onSubmit($event)"
+    [buttonText]="isNew ? 'Crear' : 'Actualizar'"
+    [formFields]="formFields"
+    [initialValues]="user"
+  >
+  </app-form>
+</div>

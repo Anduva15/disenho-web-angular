@@ -4,11 +4,11 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './auth.interceptor';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserComponent } from './user/user.component';
+import { UserComponent } from './components/user/user.component';
 
-import { UserListComponent } from './user/user-list/user-list.component';
-import { UserDetailComponent } from './user/user-detail/user-detail.component';
-import { UserFormComponent } from './user/user-form/user-form.component';
+import { UserListComponent } from './components/user/user-list/user-list.component';
+import { UserDetailComponent } from './components/user/user-detail/user-detail.component';
+import { UserFormComponent } from './components/user/user-form/user-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
@@ -16,10 +16,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListComponent } from './components/list/list.component';
 import { FormComponent } from './components/form/form.component';
 import { DetailsComponent } from './components/details/details.component';
-import { RestaurantComponent } from './restaurant/restaurant.component';
-import { RestaurantListComponent } from './restaurant/restaurant-list/restaurant-list.component';
-import { RestaurantFormComponent } from './restaurant/restaurant-form/restaurant-form.component';
-import { RestaurantDetailComponent } from './restaurant/restaurant-detail/restaurant-detail.component';
+import { RestaurantComponent } from './components/restaurant/restaurant.component';
+import { RestaurantListComponent } from './components/restaurant/restaurant-list/restaurant-list.component';
+import { RestaurantFormComponent } from './components/restaurant/restaurant-form/restaurant-form.component';
+import { RestaurantDetailComponent } from './components/restaurant/restaurant-detail/restaurant-detail.component';
+
+import { CashierComponent } from './components/cashier/cashier.component';
+import { CashierListComponent } from './components/cashier/cashier-list/cashier-list.component';
+import { CashierFormComponent } from './components/cashier/cashier-form/cashier-form.component';
+import { CashierDetailComponent } from './components/cashier/cashier-detail/cashier-detail.component';
+
 import { LoginComponent } from './components/login/login.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { SeguridadComponent } from './components/seguridad/seguridad.component';
@@ -43,6 +49,10 @@ import { AccountDetailComponent } from './components/account/account-detail/acco
     RestaurantListComponent,
     RestaurantFormComponent,
     RestaurantDetailComponent,
+    CashierComponent,
+    CashierListComponent,
+    CashierFormComponent,
+    CashierDetailComponent,
     LoginComponent,
     MenuComponent,
     SeguridadComponent,
@@ -50,7 +60,7 @@ import { AccountDetailComponent } from './components/account/account-detail/acco
     AccountComponent,
     AccountListComponent,
     AccountFormComponent,
-    AccountDetailComponent
+    AccountDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,11 +72,13 @@ import { AccountDetailComponent } from './components/account/account-detail/acco
     ReactiveFormsModule,
     MatSortModule,
   ],
-  providers: [     {
-    provide: HTTP_INTERCEPTORS,
-    useClass: AuthInterceptor,
-    multi: true,
-  },],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

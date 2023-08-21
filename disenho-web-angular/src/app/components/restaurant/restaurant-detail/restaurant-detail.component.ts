@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { RestaurantService } from '../../services/restaurant.service';
-import { Restaurant } from '../../interfaces/restaurant';
+import { RestaurantService } from '../../../services/restaurant.service';
+import { Restaurant } from '../../../interfaces/restaurant';
 import { RESTAURANT_FORM_STRUCTURE } from 'src/app/constants';
 
 @Component({
@@ -12,7 +12,7 @@ import { RESTAURANT_FORM_STRUCTURE } from 'src/app/constants';
 export class RestaurantDetailComponent implements OnInit {
   RESTAURANT_FORM_STRUCTURE = RESTAURANT_FORM_STRUCTURE;
   restaurant: Restaurant = {
-    _id: '',
+    id: 0,
     name: '',
     address: '',
     phone: '',

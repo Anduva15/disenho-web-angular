@@ -2,6 +2,7 @@
   <table class="table">
     <thead>
       <tr>
+        <th>ID</th>
         <th *ngFor="let formItem of formItems">
           {{ formItem.label }}
         </th>
@@ -12,16 +13,19 @@
     </thead>
     <tbody>
       <tr *ngFor="let item of items">
+        <td>
+          {{ item.id }}
+        </td>
         <td *ngFor="let formItem of formItems">
           {{ item[formItem.name] }}
         </td>
         <td>
-          <button (click)="onDelete(item._id)">Delete</button>
+          <button (click)="onDelete(item.id)">Delete</button>
         </td>
         <td>
-          <a [routerLink]="['/', uriSingular, 'edit', item._id]">Edit</a>
+          <a [routerLink]="['/', uriSingular, 'edit', item.id]">Edit</a>
         </td>
-        <td><a [routerLink]="['/', uriSingular, item._id]">Detail</a></td>
+        <td><a [routerLink]="['/', uriSingular, item.id]">Detail</a></td>
       </tr>
     </tbody>
   </table>
