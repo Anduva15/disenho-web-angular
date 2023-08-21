@@ -1,0 +1,11 @@
+<app-client></app-client>
+<div class="container">
+  <h2>Client List</h2>
+  <app-list
+    [formItems]="CLIENT_FORM_STRUCTURE"
+    [items]="clients"
+    [onDelete]="deleteUser"
+    [uriSingular]="CLIENT"
+    [uriPlural]="CLIENTS"
+  ></app-list>
+</div>

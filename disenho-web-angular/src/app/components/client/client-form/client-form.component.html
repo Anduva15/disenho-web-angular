@@ -1,0 +1,11 @@
+<app-client></app-client>
+<div class="container">
+  <h2>{{ isNew ? "Add Client" : "Edit Client" }}</h2>
+  <app-form
+    (formSubmit)="onSubmit($event)"
+    [buttonText]="isNew ? 'Crear' : 'Actualizar'"
+    [formFields]="formFields"
+    [initialValues]="client"
+  >
+  </app-form>
+</div>

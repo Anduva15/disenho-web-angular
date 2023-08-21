@@ -20,8 +20,11 @@ import {
   PRODUCT_ADD,
   PRODUCT,
   PRODUCT_EDIT,
+  CLIENTS,
+  CLIENT_ADD,
+  CLIENT,
+  CLIENT_EDIT,
 } from './constants';
-
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { InternalServerErrorComponent } from './internal-server-error/internal-server-error.component';
 import { RestaurantListComponent } from './components/restaurant/restaurant-list/restaurant-list.component';
@@ -33,6 +36,10 @@ import { CashierFormComponent } from './components/cashier/cashier-form/cashier-
 import { ProductListComponent } from './components/product/product-list/product-list.component';
 import { ProductDetailComponent } from './components/product/product-detail/product-detail.component';
 import { ProductFormComponent } from './components/product/product-form/product-form.component';
+
+import { ClientListComponent } from './components/client/client-list/client-list.component';
+import { ClientDetailComponent } from './components/client/client-detail/client-detail.component';
+import { ClientFormComponent } from './components/client/client-form/client-form.component';
 
 import { LoginComponent } from './components/login/login.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -65,6 +72,12 @@ const routes: Routes = [
   { path: PRODUCT_ADD, component: ProductFormComponent },
   { path: `${PRODUCT}/:id`, component: ProductDetailComponent },
   { path: `${PRODUCT_EDIT}/:id`, component: ProductFormComponent },
+  // CLIENT
+  { path: CLIENTS, component: ClientListComponent },
+  { path: CLIENT_ADD, component: ClientFormComponent },
+  { path: `${CLIENT}/:id`, component: ClientDetailComponent },
+  { path: `${CLIENT_EDIT}/:id`, component: ClientFormComponent },
+
   // REST
   { path: '', component: LoginComponent },
   { path: '**', component: PageNotFoundComponent }, // Ruta para manejar errores 404

@@ -5,7 +5,6 @@ import { AuthInterceptor } from './auth.interceptor';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './components/user/user.component';
-
 import { UserListComponent } from './components/user/user-list/user-list.component';
 import { UserDetailComponent } from './components/user/user-detail/user-detail.component';
 import { UserFormComponent } from './components/user/user-form/user-form.component';
@@ -28,6 +27,10 @@ import { ProductComponent } from './components/product/product.component';
 import { ProductListComponent } from './components/product/product-list/product-list.component';
 import { ProductFormComponent } from './components/product/product-form/product-form.component';
 import { ProductDetailComponent } from './components/product/product-detail/product-detail.component';
+import { ClientComponent } from './components/client/client.component';
+import { ClientListComponent } from './components/client/client-list/client-list.component';
+import { ClientFormComponent } from './components/client/client-form/client-form.component';
+import { ClientDetailComponent } from './components/client/client-detail/client-detail.component';
 import { LoginComponent } from './components/login/login.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { SeguridadComponent } from './components/seguridad/seguridad.component';
@@ -67,6 +70,10 @@ import { AccountDetailComponent } from './components/account/account-detail/acco
     AccountListComponent,
     AccountFormComponent,
     AccountDetailComponent,
+    ClientComponent,
+    ClientListComponent,
+    ClientFormComponent,
+    ClientDetailComponent,
   ],
   imports: [
     BrowserModule,
