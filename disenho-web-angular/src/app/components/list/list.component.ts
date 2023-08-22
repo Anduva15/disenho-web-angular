@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { FormItem } from 'src/app/interfaces/FormItem';
+import { FormItem } from '../../interfaces/FormItem';
 
 @Component({
   selector: 'app-list',
