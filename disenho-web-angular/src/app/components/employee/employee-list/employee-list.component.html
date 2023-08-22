@@ -1,0 +1,11 @@
+<app-employee></app-employee>
+<div class="container">
+  <h2>Employee List</h2>
+  <app-list
+    [formItems]="EMPLOYEE_FORM_STRUCTURE"
+    [items]="employees"
+    [onDelete]="deleteEmployee"
+    [uriSingular]="EMPLOYEE"
+    [uriPlural]="EMPLOYEES"
+  ></app-list>
+</div>

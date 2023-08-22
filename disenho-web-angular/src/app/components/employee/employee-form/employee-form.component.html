@@ -1,0 +1,11 @@
+<app-employee></app-employee>
+<div class="container">
+  <h2>{{ isNew ? "Add Employee" : "Edit Employee" }}</h2>
+  <app-form
+    (formSubmit)="onSubmit($event)"
+    [buttonText]="isNew ? 'Crear' : 'Actualizar'"
+    [formFields]="formFields"
+    [initialValues]="employee"
+  >
+  </app-form>
+</div>

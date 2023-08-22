@@ -39,6 +39,10 @@ import { AccountComponent } from './components/account/account.component';
 import { AccountListComponent } from './components/account/account-list/account-list.component';
 import { AccountFormComponent } from './components/account/account-form/account-form.component';
 import { AccountDetailComponent } from './components/account/account-detail/account-detail.component';
+import { EmployeeComponent } from './components/employee/employee.component';
+import { EmployeeDetailComponent } from './components/employee/employee-detail/employee-detail.component';
+import { EmployeeFormComponent } from './components/employee/employee-form/employee-form.component';
+import { EmployeeListComponent } from './components/employee/employee-list/employee-list.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +78,10 @@ import { AccountDetailComponent } from './components/account/account-detail/acco
     ClientListComponent,
     ClientFormComponent,
     ClientDetailComponent,
+    EmployeeComponent,
+    EmployeeDetailComponent,
+    EmployeeFormComponent,
+    EmployeeListComponent,
   ],
   imports: [
     BrowserModule,
