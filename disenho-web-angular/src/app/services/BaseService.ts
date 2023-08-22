@@ -1,6 +1,37 @@
 import { Inject, Injectable, InjectionToken } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { isEmpty } from 'lodash';
+import { UrlParam } from '../interfaces/UrlParam';
+
+const addUrlParam = (
+  url: string,
+  key: string,
+  value: string | undefined,
+  isLastKey: boolean
+): string => `${url}${value ? `${key}=${value}${isLastKey ? '' : '&'}` : ''}`;
+
+const addInitialAmpersand = (url: string = ''): string =>
+  url.slice(-1) === '&' ? url : `${url}&`;
+
+const addUrlParams = (
+  url: string = '',
+  params?: UrlParam | undefined
+): string => {
+  if (isEmpty(params)) return url;
+
+  const paramsKeys = params ? Object.keys(params) : [];
+  const initialUrl =
+    !isEmpty(params) && url.includes('?')
+      ? addInitialAmpersand(url)
+      : `${url}?`;
+
+  return paramsKeys.reduce((fullUrl, key, index) => {
+    const isLastKey = index === paramsKeys.length - 1;
+
+    return addUrlParam(fullUrl, key, params[key], isLastKey);
+  }, initialUrl);
+};
 
 const STRING_TOKEN = new InjectionToken<string>('uriSingular');
 
@@ -21,8 +52,8 @@ export class BaseService<T> {
     this.apiUrlPlural = `${this.apiUrl}/${this.uriPlural}`;
   }
 
-  getAll(): Observable<T[]> {
-    return this.http.get<T[]>(this.apiUrlPlural);
+  getAll(urlParams?: UrlParam): Observable<T[]> {
+    return this.http.get<T[]>(addUrlParams(this.apiUrlPlural, urlParams));
   }
 
   getOne(id: string | number): Observable<T> {

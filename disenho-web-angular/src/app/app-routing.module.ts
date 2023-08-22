@@ -85,10 +85,10 @@ const routes: Routes = [
   { path: `${CLIENT}/:id`, component: ClientDetailComponent },
   { path: `${CLIENT_EDIT}/:id`, component: ClientFormComponent },
   //EMPLOYEE
-  { path: EMPLOYEES, component: EmployeeListComponent},
-  { path: EMPLOYEE_ADD, component: EmployeeFormComponent},
-  { path: `${EMPLOYEE}/:id`, component: EmployeeDetailComponent},
-  { path: `${EMPLOYEE_EDIT}/:id`, component: EmployeeFormComponent},
+  { path: EMPLOYEES, component: EmployeeListComponent },
+  { path: EMPLOYEE_ADD, component: EmployeeFormComponent },
+  { path: `${EMPLOYEE}/:id`, component: EmployeeDetailComponent },
+  { path: `${EMPLOYEE_EDIT}/:id`, component: EmployeeFormComponent },
   // REST
   { path: '', component: LoginComponent },
   { path: '**', component: PageNotFoundComponent }, // Ruta para manejar errores 404

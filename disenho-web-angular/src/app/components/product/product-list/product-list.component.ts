@@ -8,6 +8,7 @@ import {
   PRODUCT_EDIT,
   PRODUCT_FORM_STRUCTURE,
 } from '../../../constants';
+import { UrlParam } from '../../../interfaces/UrlParam';
 
 @Component({
   selector: 'app-product-list',
@@ -23,10 +24,14 @@ export class ProductListComponent implements OnInit {
   constructor(private productService: ProductService, private router: Router) {}
 
   ngOnInit(): void {
-    this.productService.getAll().subscribe((products) => {
+    this.onLoadProducts();
+  }
+
+  onLoadProducts = (urlParams?: UrlParam | undefined) => {
+    this.productService.getAll(urlParams).subscribe((products) => {
       this.products = products;
     });
-  }
+  };
 
   editUser(productId: string) {
     this.router.navigate([PRODUCT_EDIT, productId]); // Navigate to the edit page

@@ -8,6 +8,7 @@ import {
   CASHIER_FORM_STRUCTURE,
 } from '../../../constants';
 import { Cashier } from 'src/app/interfaces/cashier';
+import { UrlParam } from '../../../interfaces/UrlParam';
 
 @Component({
   selector: 'app-user-list',
@@ -23,10 +24,14 @@ export class CashierListComponent implements OnInit {
   constructor(private cashierService: CashierService, private router: Router) {}
 
   ngOnInit(): void {
-    this.cashierService.getAll().subscribe((cashiers) => {
+    this.loadCashiers();
+  }
+
+  loadCashiers = (urlParams?: UrlParam | undefined) => {
+    this.cashierService.getAll(urlParams).subscribe((cashiers) => {
       this.cashiers = cashiers;
     });
-  }
+  };
 
   editCashier(cashierId: string) {
     this.router.navigate([CASHIER_EDIT, cashierId]); // Navigate to the edit page

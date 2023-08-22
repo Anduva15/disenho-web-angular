@@ -8,6 +8,7 @@ import {
   CLIENT_EDIT,
   CLIENT_FORM_STRUCTURE,
 } from '../../../constants';
+import { UrlParam } from '../../../interfaces/UrlParam';
 
 @Component({
   selector: 'app-client-list',
@@ -23,10 +24,14 @@ export class ClientListComponent implements OnInit {
   constructor(private clientService: ClientService, private router: Router) {}
 
   ngOnInit(): void {
-    this.clientService.getAll().subscribe((clients) => {
+    this.loadClients();
+  }
+
+  loadClients = (urlParams?: UrlParam | undefined) => {
+    this.clientService.getAll(urlParams).subscribe((clients) => {
       this.clients = clients;
     });
-  }
+  };
 
   editUser(clientId: string) {
     this.router.navigate([CLIENT_EDIT, clientId]); // Navigate to the edit page

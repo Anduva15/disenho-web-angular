@@ -2,48 +2,104 @@
   <div class="row">
     <div class="col-md-12">
       <div class="card-deck">
-        <div *ngFor="let item of items" class="shadow mb-4">
-          <div class="card">
-            <div class="card-header fw-bold fs-heading bg-black text-light h4">
-              ID: {{ item.id }}
-            </div>
-            <div class="card-body">
-              <div class="horizontal-container">
-                <ng-container *ngFor="let formItem of formItems; let i = index">
-                  <div class="card-text d-flex">
-                    <div class="fw-bold" style="margin-right: 5px">
-                      {{ formItem.label }}:
-                    </div>
-                    <app-text-value
-                      value="{{ item[formItem.name] }}"
-                    ></app-text-value>
-                  </div>
-                  <div class="line-break" *ngIf="(i + 1) % 4 === 0"></div>
-                </ng-container>
+        <div class="row">
+          <div class="col-md-12">
+            <div
+              *ngFor="let searchItem of searchItems; let i = index"
+              class="d-flex justify-content-between mb-1"
+            >
+              <div class="input-group">
+                <select class="form-select" [(ngModel)]="searchItems[i].label">
+                  <option>--</option>
+                  <option
+                    *ngFor="let formItem of formItems"
+                    [value]="formItem.name"
+                  >
+                    {{ formItem.label }}
+                  </option>
+                </select>
+                <input
+                  type="text"
+                  [(ngModel)]="searchItems[i].value"
+                  class="form-control"
+                  placeholder="Search"
+                />
+                <button
+                  class="btn btn-danger"
+                  style="margin-left: 3px"
+                  (click)="onClearSearchField(i)"
+                >
+                  <i class="fas fa-times"></i>
+                </button>
               </div>
             </div>
-            <div class="card-footer d-flex justify-content-around">
-              <a
-                [routerLink]="['/', uriSingular, 'edit', item.id]"
-                class="btn btn-primary text-light"
-                style="min-width: 125px"
-              >
-                Editar <i class="fas fa-pencil-alt"></i>
-              </a>
-              <a
-                [routerLink]="['/', uriSingular, item.id]"
-                class="btn btn-info text-light"
-                style="min-width: 125px"
-              >
-                Detalles <i class="fas fa-list-alt"></i>
-              </a>
+            <div class="d-flex justify-content-center mb-1">
               <button
-                class="btn btn-danger"
-                style="min-width: 125px"
-                (click)="onDelete(item.id)"
+                class="btn btn-primary"
+                style="margin-right: 3px"
+                (click)="onResetSearch()"
               >
-                Borrar <i class="fas fa-trash"></i>
+                <i class="fas fa-sync"></i>
               </button>
+              <button class="btn btn-success" (click)="onAddNewRow()">
+                <i class="fas fa-plus"></i>
+              </button>
+              <button
+                class="btn btn-primary"
+                style="margin-left: 3px"
+                (click)="searchWithParams()"
+              >
+                Search
+              </button>
+            </div>
+            <div *ngFor="let item of items" class="shadow mb-4">
+              <div class="card">
+                <div
+                  class="card-header fw-bold fs-heading bg-black text-light h4"
+                >
+                  ID: {{ item.id }}
+                </div>
+                <div class="card-body">
+                  <div class="horizontal-container">
+                    <ng-container
+                      *ngFor="let formItem of formItems; let i = index"
+                    >
+                      <div class="card-text d-flex">
+                        <div class="fw-bold" style="margin-right: 5px">
+                          {{ formItem.label }}:
+                        </div>
+                        <app-text-value
+                          value="{{ item[formItem.name] }}"
+                        ></app-text-value>
+                      </div>
+                      <div class="line-break" *ngIf="(i + 1) % 4 === 0"></div>
+                    </ng-container>
+                  </div>
+                </div>
+                <div class="card-footer d-flex justify-content-around">
+                  <a
+                    [routerLink]="['/', uriSingular, 'edit', item.id]"
+                    class="btn btn-primary text-light"
+                    style="min-width: 125px"
+                  >
+                    Editar <i class="fas fa-pencil-alt"></i>
+                  </a>
+                  <a
+                    [routerLink]="['/', uriSingular, item.id]"
+                    class="btn btn-info text-light"
+                    style="min-width: 125px"
+                  >
+                    Detalles <i class="fas fa-list-alt"></i>
+                  </a>
+                  <button
+                    class="btn btn-danger"
+                    style="min-width: 125px"
+                    (click)="onDelete(item.id)"
+                  >
+                    Borrar <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

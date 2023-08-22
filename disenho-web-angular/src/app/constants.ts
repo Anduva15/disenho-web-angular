@@ -706,7 +706,7 @@ export const getHeaderStructure = () => {
         },
         {
           label: 'Agregar Restaurante',
-          value: REPORT_ADD,
+          value: RESERVATION_ADD,
         },
       ],
     },
@@ -759,6 +759,32 @@ export const getHeaderStructure = () => {
         {
           label: 'Agregar Caja',
           value: CASHIER_ADD,
+        },
+      ],
+    },
+    {
+      label: 'Provedores',
+      links: [
+        {
+          label: 'Lista Provedores',
+          value: PROVIDER,
+        },
+        {
+          label: 'Agregar Provedor',
+          value: PRODUCT_ADD,
+        },
+      ],
+    },
+    {
+      label: 'Empleados',
+      links: [
+        {
+          label: 'Lista Empleados',
+          value: EMPLOYEES,
+        },
+        {
+          label: 'Agregar Empleado',
+          value: EMPLOYEE_ADD,
         },
       ],
     },

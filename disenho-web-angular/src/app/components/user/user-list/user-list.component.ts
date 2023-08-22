@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../../services/user.service';
 import { User } from '../../../interfaces/user';
+import { UrlParam } from '../../../interfaces/UrlParam';
 import { Router } from '@angular/router';
 import {
   USER,
@@ -23,10 +24,14 @@ export class UserListComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit(): void {
-    this.userService.getAll().subscribe((users) => {
+    this.loadUsers();
+  }
+
+  loadUsers = (urlParams?: UrlParam | undefined) => {
+    this.userService.getAll(urlParams).subscribe((users) => {
       this.users = users;
     });
-  }
+  };
 
   editUser(userId: string) {
     this.router.navigate([USER_EDIT, userId]); // Navigate to the edit page

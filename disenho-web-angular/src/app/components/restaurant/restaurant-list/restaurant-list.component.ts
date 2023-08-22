@@ -8,6 +8,7 @@ import {
 } from 'src/app/constants';
 import { Restaurant } from 'src/app/interfaces/restaurant';
 import { RestaurantService } from 'src/app/services/restaurant.service';
+import { UrlParam } from '../../../interfaces/UrlParam';
 
 @Component({
   selector: 'app-restaurant-list',
@@ -26,10 +27,14 @@ export class RestaurantListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.restaurantService.getAll().subscribe((restaurants) => {
+    this.onLoadRestaurants();
+  }
+
+  onLoadRestaurants = (urlParams?: UrlParam | undefined) => {
+    this.restaurantService.getAll(urlParams).subscribe((restaurants) => {
       this.restaurants = restaurants;
     });
-  }
+  };
 
   editRestaurant(userId: string) {
     this.router.navigate([RESTAURANT_EDIT, userId]); // Navigate to the edit page
