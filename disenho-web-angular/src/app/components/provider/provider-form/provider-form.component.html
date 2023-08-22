@@ -1,0 +1,11 @@
+<app-provider></app-provider>
+<div class="container">
+  <h2>{{ isNew ? "Add Provider" : "Edit Provider" }}</h2>
+  <app-form
+    (formSubmit)="onSubmit($event)"
+    [buttonText]="isNew ? 'Crear' : 'Actualizar'"
+    [formFields]="formFields"
+    [initialValues]="provider"
+  >
+  </app-form>
+</div>

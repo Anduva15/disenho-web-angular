@@ -1,0 +1,11 @@
+<app-provider></app-provider>
+<div class="container">
+  <h2>Provider List</h2>
+  <app-list
+    [formItems]="PROVIDER_FORM_STRUCTURE"
+    [items]="provider"
+    [onDelete]="deleteProvider"
+    [uriSingular]="PROVIDER"
+    [uriPlural]="PROVIDERS"
+  ></app-list>
+</div>
