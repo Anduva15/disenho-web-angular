@@ -1,42 +1,53 @@
 <div class="container">
-  <div class="table-container">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th *ngFor="let formItem of formItems">
-            {{ formItem.label }}
-          </th>
-          <th>Editar</th>
-          <th>Detalles</th>
-          <th>Borrar</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of items">
-          <td>
-            {{ item.id }}
-          </td>
-          <td *ngFor="let formItem of formItems">
-            <app-text-value value="{{ item[formItem.name] }}"></app-text-value>
-          </td>
-          <td>
-            <a [routerLink]="['/', uriSingular, 'edit', item.id]">
-              <i class="fas fa-pencil-alt"></i>
-            </a>
-          </td>
-          <td>
-            <a [routerLink]="['/', uriSingular, item.id]">
-              <i class="fas fa-list-alt"></i>
-            </a>
-          </td>
-          <td>
-            <div class="cursor-pointer" (click)="onDelete(item.id)">
-              <i class="fas fa-trash"></i>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card-deck">
+        <div *ngFor="let item of items" class="shadow mb-4">
+          <div class="card">
+            <div class="card-header fw-bold fs-heading bg-black text-light h4">
+              ID: {{ item.id }}
             </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+            <div class="card-body">
+              <div class="horizontal-container">
+                <ng-container *ngFor="let formItem of formItems; let i = index">
+                  <div class="card-text d-flex">
+                    <div class="fw-bold" style="margin-right: 5px">
+                      {{ formItem.label }}:
+                    </div>
+                    <app-text-value
+                      value="{{ item[formItem.name] }}"
+                    ></app-text-value>
+                  </div>
+                  <div class="line-break" *ngIf="(i + 1) % 4 === 0"></div>
+                </ng-container>
+              </div>
+            </div>
+            <div class="card-footer d-flex justify-content-around">
+              <a
+                [routerLink]="['/', uriSingular, 'edit', item.id]"
+                class="btn btn-primary text-light"
+                style="min-width: 125px"
+              >
+                Editar <i class="fas fa-pencil-alt"></i>
+              </a>
+              <a
+                [routerLink]="['/', uriSingular, item.id]"
+                class="btn btn-info text-light"
+                style="min-width: 125px"
+              >
+                Detalles <i class="fas fa-list-alt"></i>
+              </a>
+              <button
+                class="btn btn-danger"
+                style="min-width: 125px"
+                (click)="onDelete(item.id)"
+              >
+                Borrar <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
