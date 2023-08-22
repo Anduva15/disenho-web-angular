@@ -1,6 +1,11 @@
-<div>
-  <p *ngFor="let formItem of formItems">
-    <strong>{{ formItem.label }}:</strong>
-    {{ item[formItem.name] }}
-  </p>
+<div class="card shadow myCard">
+  <ng-container *ngFor="let formItem of formItems; let even = even">
+    <div
+      class="myRow mb-1 d-flex justify-content-between"
+      [class.bg-light]="even"
+    >
+      <div class="myText fw-bold">{{ formItem.label }}:</div>
+      <app-text-value value="{{ item[formItem.name] }}"></app-text-value>
+    </div>
+  </ng-container>
 </div>

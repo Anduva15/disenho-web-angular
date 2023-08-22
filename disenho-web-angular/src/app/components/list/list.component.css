@@ -1,0 +1,62 @@
+.container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.table-container {
+  max-height: 80%; /* Set the maximum height of the container */
+  overflow: auto; /* Enable vertical and horizontal scrolling */
+  border: 1px solid #ddd;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: black;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+button:hover {
+  background-color: #c82333;
+}
+
+.cursor-pointer > i {
+  cursor: pointer;
+}
+
+.horizontal-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-text {
+  width: 25%; /* Distribute items evenly across the horizontal space */
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.line-break {
+  width: 100%;
+  height: 0;
+  margin: 5px 0;
+  border-top: 1px solid #ccc;
+}

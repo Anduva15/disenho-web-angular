@@ -1,22 +1,32 @@
-<form [formGroup]="form" (ngSubmit)="submitForm()">
+<form
+  [formGroup]="form"
+  class="my-form shadow bg-light"
+  (ngSubmit)="submitForm()"
+>
   <ng-container *ngFor="let field of formFields">
-    <div>
-      <label for="{{ field.name }}">{{ field.label }}:</label>
-      <span [ngSwitch]="field.inputType">
-        <input
-          *ngSwitchCase="'checkbox'"
-          [formControlName]="field.name"
-          [id]="field.name"
-          type="checkbox"
-        />
-        <input
-          *ngSwitchDefault
-          [id]="field.name"
-          [formControlName]="field.name"
-          [type]="field.inputType"
-        />
-      </span>
+    <div class="form-group row align-items-center my-row">
+      <label class="fw-bold col-sm-4" for="{{ field.name }}"
+        >{{ field.label }}:</label
+      >
+      <div class="col-sm-8">
+        <span [ngSwitch]="field.inputType">
+          <input
+            *ngSwitchCase="'checkbox'"
+            [formControlName]="field.name"
+            [id]="field.name"
+            type="checkbox"
+            class="form-check-input"
+          />
+          <input
+            *ngSwitchDefault
+            [id]="field.name"
+            [formControlName]="field.name"
+            [type]="field.inputType"
+            class="form-control"
+          />
+        </span>
+      </div>
     </div>
   </ng-container>
-  <button type="submit">{{ buttonText }}</button>
+  <button type="submit" class="btn btn-primary">{{ buttonText }}</button>
 </form>

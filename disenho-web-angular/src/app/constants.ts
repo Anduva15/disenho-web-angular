@@ -679,3 +679,88 @@ export const TABLE_FORM_STRUCTURE: FormItem[] = [
     inputType: 'text',
   },
 ];
+
+export const getHeaderStructure = () => {
+  // lo dejo function para poder validar los campos basados en el rol
+
+  return [
+    {
+      label: 'Usuarios',
+      links: [
+        {
+          label: 'Lista Usuarios',
+          value: USERS,
+        },
+        {
+          label: 'Agregar Usuario',
+          value: USER_ADD,
+        },
+      ],
+    },
+    {
+      label: 'Restaurantes',
+      links: [
+        {
+          label: 'Lista Restaurantes',
+          value: RESTAURANTS,
+        },
+        {
+          label: 'Agregar Restaurante',
+          value: REPORT_ADD,
+        },
+      ],
+    },
+    {
+      label: 'Facturas',
+      links: [
+        {
+          label: 'Lista Facturas',
+          value: ACCOUNTS,
+        },
+        {
+          label: 'Agregar Factura',
+          value: ACCOUNT_ADD,
+        },
+      ],
+    },
+    {
+      label: 'Clientes',
+      links: [
+        {
+          label: 'Lista Clientes',
+          value: CLIENTS,
+        },
+        {
+          label: 'Agregar Cliente',
+          value: CLIENT_ADD,
+        },
+      ],
+    },
+    {
+      label: 'Productos',
+      links: [
+        {
+          label: 'Lista Productos',
+          value: PRODUCTS,
+        },
+        {
+          label: 'Agregar Producto',
+          value: PRODUCT_ADD,
+        },
+      ],
+    },
+    {
+      label: 'Cajas',
+      links: [
+        {
+          label: 'Lista Cajas',
+          value: CASHIERS,
+        },
+        {
+          label: 'Agregar Caja',
+          value: CASHIER_ADD,
+        },
+      ],
+    },
+  ];
+};
