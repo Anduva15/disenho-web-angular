@@ -1,0 +1,33 @@
+.my-form {
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-check-input {
+  margin-top: 5px;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+/* Optional: Additional styling for checkboxes */
+.form-check-input[type="checkbox"] {
+  margin-top: 0;
+}
+
+/* Optional: Adjust spacing around the button */
+.btn-primary {
+  margin-top: 15px;
+}
+
+.my-row {
+  height: 40px;
+}

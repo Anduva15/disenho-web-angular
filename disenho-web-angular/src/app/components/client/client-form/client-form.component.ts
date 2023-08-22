@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { omit } from 'lodash';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { CLIENTS, CLIENT_FORM_STRUCTURE } from 'src/app/constants';
+import { CLIENTS, CLIENT_FORM_STRUCTURE } from '../../../constants';
 import { ClientService } from '../../../services/client.service';
 import { Client } from '../../../interfaces/client';
 

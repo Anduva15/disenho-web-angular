@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow my-header">
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li
+        *ngFor="let headerItem of headerStructure"
+        ngbDropdown
+        class="nav-item dropdown"
+      >
+        <a
+          class="nav-link dropdown-toggle"
+          id="navbarDropdown"
+          role="button"
+          ngbDropdownToggle
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          {{ headerItem.label }}
+        </a>
+        <div
+          ngbDropdownMenu
+          class="dropdown-menu"
+          aria-labelledby="navbarDropdown"
+        >
+          <a
+            *ngFor="let headerItemLink of headerItem.links"
+            ngbDropdownItem
+            class="dropdown-item"
+            href="/{{ headerItemLink.value }}"
+            >{{ headerItemLink.label }}</a
+          >
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

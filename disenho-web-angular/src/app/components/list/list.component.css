@@ -1,0 +1,43 @@
+.container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.table-container {
+  max-height: 80%; /* Set the maximum height of the container */
+  overflow: auto; /* Enable vertical and horizontal scrolling */
+  border: 1px solid #ddd;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+button:hover {
+  background-color: #c82333;
+}
+
+.cursor-pointer > i {
+  cursor: pointer;
+}

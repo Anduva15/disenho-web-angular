@@ -1,32 +1,42 @@
 <div class="container">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th *ngFor="let formItem of formItems">
-          {{ formItem.label }}
-        </th>
-        <th>Borrar</th>
-        <th>Editar</th>
-        <th>Detalles</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of items">
-        <td>
-          {{ item.id }}
-        </td>
-        <td *ngFor="let formItem of formItems">
-          {{ item[formItem.name] }}
-        </td>
-        <td>
-          <button (click)="onDelete(item.id)">Delete</button>
-        </td>
-        <td>
-          <a [routerLink]="['/', uriSingular, 'edit', item.id]">Edit</a>
-        </td>
-        <td><a [routerLink]="['/', uriSingular, item.id]">Detail</a></td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="table-container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th *ngFor="let formItem of formItems">
+            {{ formItem.label }}
+          </th>
+          <th>Editar</th>
+          <th>Detalles</th>
+          <th>Borrar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items">
+          <td>
+            {{ item.id }}
+          </td>
+          <td *ngFor="let formItem of formItems">
+            <app-text-value value="{{ item[formItem.name] }}"></app-text-value>
+          </td>
+          <td>
+            <a [routerLink]="['/', uriSingular, 'edit', item.id]">
+              <i class="fas fa-pencil-alt"></i>
+            </a>
+          </td>
+          <td>
+            <a [routerLink]="['/', uriSingular, item.id]">
+              <i class="fas fa-list-alt"></i>
+            </a>
+          </td>
+          <td>
+            <div class="cursor-pointer" (click)="onDelete(item.id)">
+              <i class="fas fa-trash"></i>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

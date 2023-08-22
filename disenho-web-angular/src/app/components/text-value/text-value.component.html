@@ -1,0 +1,5 @@
+<i *ngIf="value === 'true'" class="fas fa-check text-success myText"></i>
+<i *ngIf="value === 'false'" class="fas fa-times text-danger myText"></i>
+<div *ngIf="value !== 'true' && value !== 'false'" class="myText">
+  {{ value }}
+</div>
