@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserListComponent } from './components/user/user-list/user-list.component';
 import { UserFormComponent } from './components/user/user-form/user-form.component';
 import { UserDetailComponent } from './components/user/user-detail/user-detail.component';
+import { AuthGuard } from './auth.guard';
 import {
   CASHIER,
   CASHIER_EDIT,
@@ -63,44 +64,44 @@ const routes: Routes = [
   //LOGIN
   { path: 'login', component: LoginComponent },
   //Menu
-  { path: 'menu', component: MenuComponent },
+  { path: 'menu', component: MenuComponent, canActivate: [AuthGuard] },
   //Seguridad
-  { path: 'seguridad', component: SeguridadComponent },
+  { path: 'seguridad', component: SeguridadComponent, canActivate: [AuthGuard] },
   // USERS
-  { path: USERS, component: UserListComponent },
-  { path: USER_ADD, component: UserFormComponent },
-  { path: `${USER}/:id`, component: UserDetailComponent },
-  { path: `${USER_EDIT}/:id`, component: UserFormComponent },
+  { path: USERS, component: UserListComponent, canActivate: [AuthGuard] },
+  { path: USER_ADD, component: UserFormComponent, canActivate: [AuthGuard] },
+  { path: `${USER}/:id`, component: UserDetailComponent , canActivate: [AuthGuard]},
+  { path: `${USER_EDIT}/:id`, component: UserFormComponent, canActivate: [AuthGuard] },
   // RESTAURANTS
-  { path: RESTAURANTS, component: RestaurantListComponent },
-  { path: RESTAURANT_ADD, component: RestaurantFormComponent },
-  { path: `${RESTAURANT}/:id`, component: RestaurantDetailComponent },
-  { path: `${RESTAURANT_EDIT}/:id`, component: RestaurantFormComponent },
+  { path: RESTAURANTS, component: RestaurantListComponent, canActivate: [AuthGuard] },
+  { path: RESTAURANT_ADD, component: RestaurantFormComponent, canActivate: [AuthGuard] },
+  { path: `${RESTAURANT}/:id`, component: RestaurantDetailComponent , canActivate: [AuthGuard]},
+  { path: `${RESTAURANT_EDIT}/:id`, component: RestaurantFormComponent, canActivate: [AuthGuard] },
   // CASHIER
-  { path: CASHIERS, component: CashierListComponent },
-  { path: CASHIER_ADD, component: CashierFormComponent },
-  { path: `${CASHIER}/:id`, component: CashierDetailComponent },
-  { path: `${CASHIER_EDIT}/:id`, component: CashierFormComponent },
+  { path: CASHIERS, component: CashierListComponent, canActivate: [AuthGuard] },
+  { path: CASHIER_ADD, component: CashierFormComponent, canActivate: [AuthGuard]},
+  { path: `${CASHIER}/:id`, component: CashierDetailComponent, canActivate: [AuthGuard] },
+  { path: `${CASHIER_EDIT}/:id`, component: CashierFormComponent, canActivate: [AuthGuard] },
   // PRODUCT
-  { path: PRODUCTS, component: ProductListComponent },
-  { path: PRODUCT_ADD, component: ProductFormComponent },
-  { path: `${PRODUCT}/:id`, component: ProductDetailComponent },
-  { path: `${PRODUCT_EDIT}/:id`, component: ProductFormComponent },
+  { path: PRODUCTS, component: ProductListComponent, canActivate: [AuthGuard] },
+  { path: PRODUCT_ADD, component: ProductFormComponent , canActivate: [AuthGuard]},
+  { path: `${PRODUCT}/:id`, component: ProductDetailComponent , canActivate: [AuthGuard]},
+  { path: `${PRODUCT_EDIT}/:id`, component: ProductFormComponent , canActivate: [AuthGuard]},
   // CLIENT
-  { path: CLIENTS, component: ClientListComponent },
-  { path: CLIENT_ADD, component: ClientFormComponent },
-  { path: `${CLIENT}/:id`, component: ClientDetailComponent },
-  { path: `${CLIENT_EDIT}/:id`, component: ClientFormComponent },
+  { path: CLIENTS, component: ClientListComponent , canActivate: [AuthGuard]},
+  { path: CLIENT_ADD, component: ClientFormComponent , canActivate: [AuthGuard]},
+  { path: `${CLIENT}/:id`, component: ClientDetailComponent , canActivate: [AuthGuard]},
+  { path: `${CLIENT_EDIT}/:id`, component: ClientFormComponent , canActivate: [AuthGuard]},
   //EMPLOYEE
-  { path: EMPLOYEES, component: EmployeeListComponent },
-  { path: EMPLOYEE_ADD, component: EmployeeFormComponent },
-  { path: `${EMPLOYEE}/:id`, component: EmployeeDetailComponent },
-  { path: `${EMPLOYEE_EDIT}/:id`, component: EmployeeFormComponent },
+  { path: EMPLOYEES, component: EmployeeListComponent , canActivate: [AuthGuard]},
+  { path: EMPLOYEE_ADD, component: EmployeeFormComponent , canActivate: [AuthGuard]},
+  { path: `${EMPLOYEE}/:id`, component: EmployeeDetailComponent , canActivate: [AuthGuard]},
+  { path: `${EMPLOYEE_EDIT}/:id`, component: EmployeeFormComponent , canActivate: [AuthGuard]},
   //ACCOUNTS
-  { path: ACCOUNTS, component: AccountListComponent },
-  { path: ACCOUNT_ADD, component: AccountFormComponent },
-  { path: `${ACCOUNT}/:id`, component: AccountDetailComponent },
-  { path: `${ACCOUNT_EDIT}/:id`, component: AccountFormComponent },
+  { path: ACCOUNTS, component: AccountListComponent , canActivate: [AuthGuard]},
+  { path: ACCOUNT_ADD, component: AccountFormComponent , canActivate: [AuthGuard]},
+  { path: `${ACCOUNT}/:id`, component: AccountDetailComponent , canActivate: [AuthGuard]},
+  { path: `${ACCOUNT_EDIT}/:id`, component: AccountFormComponent , canActivate: [AuthGuard]},
   // REST
   { path: '', component: LoginComponent },
   { path: '**', component: PageNotFoundComponent }, // Ruta para manejar errores 404

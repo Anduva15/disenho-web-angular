@@ -36,4 +36,9 @@ export class AuthService {
     // Redirect to login page
     this.router.navigate(['/login']);
   }
+
+  isLoggedIn(): boolean {
+    // Check if a valid token exists
+    return localStorage.getItem('auth_token') !== null;
+  }
 }
