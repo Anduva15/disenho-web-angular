@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { omit } from 'lodash';
 import { ActivatedRoute, Router } from '@angular/router';
+
+import { ACCOUNTS, ACCOUNT_FORM_STRUCTURE } from 'src/app/constants';
 import { AccountService } from '../../../services/account.service';
 import { Account } from '../../../interfaces/account';
-import { ACCOUNTS, ACCOUNT_FORM_STRUCTURE } from '../../../constants';
+
 @Component({
   selector: 'app-account-form',
   templateUrl: './account-form.component.html',
@@ -11,19 +13,19 @@ import { ACCOUNTS, ACCOUNT_FORM_STRUCTURE } from '../../../constants';
 })
 export class AccountFormComponent {
   isNew: boolean = true;
-  RESTAURANT_FORM_STRUCTURE = ACCOUNT_FORM_STRUCTURE;
+  formFields = ACCOUNT_FORM_STRUCTURE;
 
   account: Account = {
     id: 0,
     totalAmount: 0,
     clients: [],
-    entryDate: new Date(NaN),
-    exitDate: new Date(NaN),
-    reservationDate: new Date(NaN),
-    reservationId: '',
+    entryDate: new Date(),
+    exitDate: new Date(),
+    reservationDate: new Date(),
+    reservationId: 'string',
     bar: false,
-    restaurantId: 'String',
-    status: 'String',
+    restaurantId: 'string',
+    status: 'string',
   };
 
   constructor(
@@ -35,10 +37,10 @@ export class AccountFormComponent {
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       if (params['id']) {
-        // Load restaurant data if editing an existing user
-        const accountid = params['id'];
-        this.accountService.getOne(accountid).subscribe((account) => {
-          this.account = account;
+        // Load ACCOUNT data if editing an existing ACCOUNT
+        const ACCOUNTId = params['id'];
+        this.accountService.getOne(ACCOUNTId).subscribe((ACCOUNT) => {
+          this.account = ACCOUNT;
           this.isNew = false;
         });
       }
@@ -46,19 +48,19 @@ export class AccountFormComponent {
   }
 
   onSubmit(formData: any) {
-    // Update user data with form data
+    // Update ACCOUNT data with form data
     this.account = { ...this.account, ...formData };
 
     if (this.isNew) {
       this.accountService.create(omit(this.account, ['id'])).subscribe(() => {
-        // Redirect to user list after successful creation
+        // Redirect to ACCOUNT list after successful creation
         this.router.navigate([ACCOUNTS]);
       });
     } else {
       this.accountService
         .update(this.account.id, this.account)
         .subscribe(() => {
-          // Redirect to user list after successful update
+          // Redirect to ACCOUNT list after successful update
           this.router.navigate([ACCOUNTS]);
         });
     }

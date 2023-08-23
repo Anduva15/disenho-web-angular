@@ -1,1 +1,12 @@
-<p>account-list works!</p>
+<app-header></app-header>
+<div class="container">
+  <h2>Lista Facturas</h2>
+  <app-list
+    [formItems]="ACCOUNT_FORM_STRUCTURE"
+    [items]="accounts"
+    [onDelete]="deleteAccount"
+    [onSearch]="loadAccounts"
+    [uriSingular]="ACCOUNT"
+    [uriPlural]="ACCOUNTS"
+  ></app-list>
+</div>

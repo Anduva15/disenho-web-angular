@@ -1,38 +1,49 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { AccountService } from '../../../services/account.service';
 import { Account } from '../../../interfaces/account';
-import { ACCOUNT, ACCOUNTS, ACCOUNT_ADD, ACCOUNT_EDIT,  ACCOUNT_FORM_STRUCTURE} from '../../../constants';
+import { UrlParam } from '../../../interfaces/UrlParam';
+import { Router } from '@angular/router';
+import {
+  ACCOUNT,
+  ACCOUNTS,
+  ACCOUNT_EDIT,
+  ACCOUNT_FORM_STRUCTURE,
+} from '../../../constants';
+
 @Component({
   selector: 'app-account-list',
   templateUrl: './account-list.component.html',
-  styleUrls: ['./account-list.component.css']
+  styleUrls: ['./account-list.component.css'],
 })
-export class AccountListComponent {
+export class AccountListComponent implements OnInit {
   accounts: Account[] = [];
   ACCOUNT = ACCOUNT;
   ACCOUNTS = ACCOUNTS;
   ACCOUNT_FORM_STRUCTURE = ACCOUNT_FORM_STRUCTURE;
 
   constructor(
-    private accountService: AccountService,
+    private accountsService: AccountService,
     private router: Router
   ) {}
 
   ngOnInit(): void {
-    this.accountService.getAll().subscribe((accounts) => {
+    this.loadAccounts();
+  }
+
+  loadAccounts = (urlParams?: UrlParam | undefined) => {
+    this.accountsService.getAll(urlParams).subscribe((accounts) => {
       this.accounts = accounts;
     });
+  };
+
+  editAccount(accountId: string) {
+    this.router.navigate([ACCOUNT_EDIT, accountId]); // Navigate to the edit page
   }
 
-  editRestaurant(userId: string) {
-    this.router.navigate([ACCOUNT_EDIT, userId]); // Navigate to the edit page
-  }
-
-  deleteRestaurant = (userId: string) => {
-    if (confirm('Are you sure you want to delete this user?')) {
-      this.accountService.delete(userId).subscribe(() => {
-        this.accountService.getAll().subscribe((u) => {
+  deleteAccount = (accountId: string) => {
+    if (confirm('Are you sure you want to delete this account?')) {
+      this.accountsService.delete(accountId).subscribe(() => {
+        this.accountsService.getAll().subscribe((u) => {
           this.accounts = u;
         });
       });

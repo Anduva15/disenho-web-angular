@@ -28,6 +28,10 @@ import {
   EMPLOYEES,
   EMPLOYEE_ADD,
   EMPLOYEE_EDIT,
+  ACCOUNTS,
+  ACCOUNT_ADD,
+  ACCOUNT,
+  ACCOUNT_EDIT,
 } from './constants';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { InternalServerErrorComponent } from './internal-server-error/internal-server-error.component';
@@ -51,6 +55,9 @@ import { SeguridadComponent } from './components/seguridad/seguridad.component';
 import { EmployeeListComponent } from './components/employee/employee-list/employee-list.component';
 import { EmployeeFormComponent } from './components/employee/employee-form/employee-form.component';
 import { EmployeeDetailComponent } from './components/employee/employee-detail/employee-detail.component';
+import { AccountListComponent } from './components/account/account-list/account-list.component';
+import { AccountFormComponent } from './components/account/account-form/account-form.component';
+import { AccountDetailComponent } from './components/account/account-detail/account-detail.component';
 
 const routes: Routes = [
   //LOGIN
@@ -89,6 +96,11 @@ const routes: Routes = [
   { path: EMPLOYEE_ADD, component: EmployeeFormComponent },
   { path: `${EMPLOYEE}/:id`, component: EmployeeDetailComponent },
   { path: `${EMPLOYEE_EDIT}/:id`, component: EmployeeFormComponent },
+  //ACCOUNTS
+  { path: ACCOUNTS, component: AccountListComponent },
+  { path: ACCOUNT_ADD, component: AccountFormComponent },
+  { path: `${ACCOUNT}/:id`, component: AccountDetailComponent },
+  { path: `${ACCOUNT_EDIT}/:id`, component: AccountFormComponent },
   // REST
   { path: '', component: LoginComponent },
   { path: '**', component: PageNotFoundComponent }, // Ruta para manejar errores 404
