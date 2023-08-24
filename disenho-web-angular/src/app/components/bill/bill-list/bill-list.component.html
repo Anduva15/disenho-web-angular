@@ -1,0 +1,12 @@
+<app-header></app-header>
+<div class="container">
+  <h2>Lista facturas</h2>
+  <app-list
+    [formItems]="BILL_FORM_STRUCTURE"
+    [items]="bills"
+    [onDelete]="deleteBill"
+    [onSearch]="onLoadBills"
+    [uriSingular]="BILL"
+    [uriPlural]="BILLS"
+  ></app-list>
+</div>

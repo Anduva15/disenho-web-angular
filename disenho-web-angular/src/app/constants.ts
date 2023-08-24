@@ -680,6 +680,60 @@ export const TABLE_FORM_STRUCTURE: FormItem[] = [
   },
 ];
 
+//BILL
+
+export const BILL = 'bill';
+export const BILLS = 'bills';
+export const BILL_ADD: string = 'bill/add';
+export const BILL_EDIT: string = 'bill/edit';
+
+export const BILL_FORM_STRUCTURE: FormItem[] = [
+  {
+    name: 'totalAmount',
+    label: 'totalAmount',
+    inputType: 'text',
+  },
+  {
+    name: 'clients',
+    label: 'clients',
+    inputType: 'text',
+  },
+  {
+    name: 'entryDate',
+    label: 'entryDate',
+    inputType: 'date',
+  },
+  {
+    name: 'exitDate',
+    label: 'exitDate',
+    inputType: 'date',
+  },
+  {
+    name: 'reservationDate',
+    label: 'reservationDate',
+    inputType: 'date',
+  },
+  {
+    name: 'reservationId',
+    label: 'reservationId',
+    inputType: 'text',
+  },
+  {
+    name: 'bar',
+    label: 'bar',
+    inputType: 'text',
+  },
+  {
+    name: 'restaurantId',
+    label: 'restaurantId',
+    inputType: 'text',
+  },
+  {
+    name: 'status',
+    label: 'status',
+    inputType: 'text',
+  }
+];
 export const getHeaderStructure = () => {
   // lo dejo function para poder validar los campos basados en el rol
 
@@ -715,15 +769,15 @@ export const getHeaderStructure = () => {
       links: [
         {
           label: 'Lista Facturas',
-          value: ACCOUNTS,
+          value: BILLS,
         },
         {
           label: 'Agregar Factura',
-          value: ACCOUNT_ADD,
+          value: BILL_ADD,
         },
         {
           label: 'Buscar Factura',
-          value: ACCOUNT,
+          value: BILL,
         },
       ],
     },

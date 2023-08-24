@@ -1,0 +1,11 @@
+<app-header></app-header>
+<div class="container">
+  <h2>{{ isNew ? "Add bill" : "Edit bill" }}</h2>
+  <app-form
+    (formSubmit)="onSubmit($event)"
+    [buttonText]="isNew ? 'Crear' : 'Actualizar'"
+    [formFields]="formFields"
+    [initialValues]="bill"
+  >
+  </app-form>
+</div>

@@ -33,6 +33,10 @@ import {
   ACCOUNT_ADD,
   ACCOUNT,
   ACCOUNT_EDIT,
+  BILLS,
+  BILL_ADD,
+  BILL_EDIT,
+  BILL
 } from './constants';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { InternalServerErrorComponent } from './internal-server-error/internal-server-error.component';
@@ -59,7 +63,9 @@ import { EmployeeDetailComponent } from './components/employee/employee-detail/e
 import { AccountListComponent } from './components/account/account-list/account-list.component';
 import { AccountFormComponent } from './components/account/account-form/account-form.component';
 import { AccountDetailComponent } from './components/account/account-detail/account-detail.component';
-
+import { BillDetailComponent } from './components/bill/bill-detail/bill-detail.component';
+import { BillFormComponent } from './components/bill/bill-form/bill-form.component';
+import { BillListComponent } from './components/bill/bill-list/bill-list.component';
 
 import { AdministrationComponent } from './components/administration/administration.component';
 const routes: Routes = [
@@ -107,6 +113,11 @@ const routes: Routes = [
   { path: ACCOUNT_ADD, component: AccountFormComponent , canActivate: [AuthGuard]},
   { path: `${ACCOUNT}/:id`, component: AccountDetailComponent , canActivate: [AuthGuard]},
   { path: `${ACCOUNT_EDIT}/:id`, component: AccountFormComponent , canActivate: [AuthGuard]},
+  //BILLS
+  { path: BILLS, component: BillListComponent , canActivate: [AuthGuard]},
+  { path: BILL_ADD, component: BillFormComponent , canActivate: [AuthGuard]},
+  { path: `${BILL}/:id`, component: BillDetailComponent , canActivate: [AuthGuard]},
+  { path: `${BILL_EDIT}/:id`, component: BillFormComponent , canActivate: [AuthGuard]},
   // REST
   { path: '', component: LoginComponent },
   { path: '**', component: PageNotFoundComponent }, // Ruta para manejar errores 404
