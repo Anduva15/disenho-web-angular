@@ -706,7 +706,7 @@ export const getHeaderStructure = () => {
         },
         {
           label: 'Agregar Restaurante',
-          value: RESERVATION_ADD,
+          value: RESTAURANT_ADD,
         },
       ],
     },
@@ -720,6 +720,10 @@ export const getHeaderStructure = () => {
         {
           label: 'Agregar Factura',
           value: ACCOUNT_ADD,
+        },
+        {
+          label: 'Buscar Factura',
+          value: ACCOUNT,
         },
       ],
     },

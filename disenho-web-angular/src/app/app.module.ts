@@ -40,6 +40,7 @@ import { EmployeeDetailComponent } from './components/employee/employee-detail/e
 import { EmployeeFormComponent } from './components/employee/employee-form/employee-form.component';
 import { EmployeeListComponent } from './components/employee/employee-list/employee-list.component';
 import { HeaderComponent } from './components/header/header.component';
+import { AdministrationComponent } from './components/administration/administration.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { HeaderComponent } from './components/header/header.component';
     EmployeeFormComponent,
     EmployeeListComponent,
     HeaderComponent,
+    AdministrationComponent,
   ],
   imports: [
     NgbModule,

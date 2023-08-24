@@ -10,7 +10,6 @@ body {
 }
 .logout-button {
     position: fixed;
-    top: 20px;
     right: 20px;
     background-color: #e74c3c;
     color: #fff;

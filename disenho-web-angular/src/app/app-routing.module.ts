@@ -60,6 +60,8 @@ import { AccountListComponent } from './components/account/account-list/account-
 import { AccountFormComponent } from './components/account/account-form/account-form.component';
 import { AccountDetailComponent } from './components/account/account-detail/account-detail.component';
 
+
+import { AdministrationComponent } from './components/administration/administration.component';
 const routes: Routes = [
   //LOGIN
   { path: 'login', component: LoginComponent },
@@ -67,6 +69,9 @@ const routes: Routes = [
   { path: 'menu', component: MenuComponent, canActivate: [AuthGuard] },
   //Seguridad
   { path: 'seguridad', component: SeguridadComponent, canActivate: [AuthGuard] },
+  //Administracion
+  { path: 'administracion', component: AdministrationComponent, canActivate: [AuthGuard] },
+
   // USERS
   { path: USERS, component: UserListComponent, canActivate: [AuthGuard] },
   { path: USER_ADD, component: UserFormComponent, canActivate: [AuthGuard] },
