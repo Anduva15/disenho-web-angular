@@ -7,13 +7,24 @@
     [formFields]="formFields"
     [initialValues]="cashier"
   >
-  
+    <!-- Add the select input for restaurantId -->
+    <div class="form-group">
+      <label for="restaurantId">Restaurant ID</label>
+      <ng-select
+      class="form-control"
+      [(ngModel)]="cashier.restaurantId"
+      name="restaurantId"
+      [items]="allRestaurantIds"
+      placeholder="Select a restaurant"
+    >
+    </ng-select>
+    
+    </div>
   </app-form>
+<p>{{allRestaurantIds}}</p>
 
   <div class="button-container">
     <button class="action-button" type="button" (click)="openCashier()">Open Cashier</button>
     <button class="action-button" type="button" (click)="closeCashier()">Close Cashier</button>
   </div>
-
-
 </div>

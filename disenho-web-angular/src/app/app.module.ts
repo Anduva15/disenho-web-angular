@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -45,6 +45,7 @@ import { AdministrationComponent } from './components/administration/administrat
 import { BillDetailComponent } from './components/bill/bill-detail/bill-detail.component';
 import { BillListComponent } from './components/bill/bill-list/bill-list.component';
 import { BillFormComponent } from './components/bill/bill-form/bill-form.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -88,6 +89,7 @@ import { BillFormComponent } from './components/bill/bill-form/bill-form.compone
   imports: [
     NgMultiSelectDropDownModule,
     NgbModule,
+    NgSelectModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

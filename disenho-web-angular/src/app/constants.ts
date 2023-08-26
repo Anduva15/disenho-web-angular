@@ -253,7 +253,9 @@ export const CASHIER_FORM_STRUCTURE: FormItem[] = [
   {
     name: 'restaurantId',
     label: 'Restaurante ID',
-    inputType: 'select',
+    inputType: 'select', 
+    options: [], 
+    validators: [Validators.required],
    
   },
 ];

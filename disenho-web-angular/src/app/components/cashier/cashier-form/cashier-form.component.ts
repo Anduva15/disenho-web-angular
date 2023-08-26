@@ -6,7 +6,8 @@ import { CASHIERS, CASHIER_FORM_STRUCTURE } from 'src/app/constants';
 import { CashierService } from '../../../services/cashier.service';
 import { RestaurantService } from 'src/app/services/restaurant.service';
 import { Cashier } from '../../../interfaces/cashier';
-
+import { NgModel } from '@angular/forms';
+import { Restaurant } from 'src/app/interfaces/restaurant';
 @Component({
   selector: 'app-cashier-form',
   templateUrl: './cashier-form.component.html',
@@ -24,9 +25,9 @@ export class CashierFormComponent {
     closingMoney: 0,
     cashierOpeningDate: null,
     cashierClosingDate: null,
-    restaurantId: '',
+    restaurantId: "",
   };
-
+  allRestaurantIds: number[] = []; 
   constructor(
     private cashierService: CashierService,
     private restaurantService: RestaurantService,
@@ -44,6 +45,11 @@ export class CashierFormComponent {
           this.isNew = false;
         });
       }
+    });
+    this.restaurantService.getAll().subscribe(restaurants => {
+      restaurants.forEach(restaurant => {
+        this.allRestaurantIds.push(restaurant.id);
+      });
     });
   }
 

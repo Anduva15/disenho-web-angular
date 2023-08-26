@@ -30,4 +30,12 @@ export class CashierService extends BaseService<Cashier> {
       })
     );
   }
+
+  getExistingRestaurantIds(): Observable<string[]> {
+    // Make an HTTP request to fetch existing restaurant IDs
+    // Adjust the URL based on your API
+    const existingRestaurantIdsUrl = `restaurants`;
+
+    return this.http.get<string[]>(existingRestaurantIdsUrl);
+  }
 }

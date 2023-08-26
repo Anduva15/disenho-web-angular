@@ -19,7 +19,7 @@ export class CashierDetailComponent implements OnInit {
     closingMoney: 0,
     cashierOpeningDate: new Date(),
     cashierClosingDate: null,
-    restaurantId: '',
+    restaurantId: "",
   };
 
   constructor(
