@@ -71,6 +71,7 @@ export const USER_FORM_STRUCTURE: FormItem[] = [
   },
 ];
 
+
 export const RESTAURANT = 'restaurant';
 export const RESTAURANTS = 'restaurants';
 export const RESTAURANT_ADD: string = 'restaurant/add';
@@ -221,14 +222,12 @@ export const CASHIER_FORM_STRUCTURE: FormItem[] = [
     name: 'registrationDate',
     label: 'fecha de registro',
     inputType: 'text',
-    // validators: [Validators.required],
+    validators: [Validators.required],
   },
-  // se necesita ???
   {
     name: 'description',
     label: 'Descripcion',
     inputType: 'text',
-    // validators: [Validators.required, Validators.email],
   },
   {
     name: 'startingMoney',
@@ -239,7 +238,6 @@ export const CASHIER_FORM_STRUCTURE: FormItem[] = [
     name: 'closingMoney',
     label: 'Dinero al cerrar',
     inputType: 'text',
-    // validators: [Validators.required, Validators.minLength(6)],
   },
   {
     name: 'cashierOpeningDate',
@@ -250,12 +248,13 @@ export const CASHIER_FORM_STRUCTURE: FormItem[] = [
     name: 'cashierClosingDate',
     label: 'Fecha de cierre',
     inputType: 'text',
-    // validators: [Validators.required, Validators.minLength(6)],
+  
   },
   {
     name: 'restaurantId',
     label: 'Restaurante ID',
-    inputType: 'text',
+    inputType: 'select',
+   
   },
 ];
 

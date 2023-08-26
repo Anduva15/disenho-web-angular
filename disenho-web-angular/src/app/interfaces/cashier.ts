@@ -1,10 +1,10 @@
 export interface Cashier {
   id: number;
-  registrationDate: string;
+  registrationDate: Date;
   description: string;
   startingMoney: number;
   closingMoney: number;
-  cashierOpeningDate: Date;
-  cashierClosingDate: Date;
+  cashierOpeningDate: Date | null;
+  cashierClosingDate: Date | null;
   restaurantId: string;
 }

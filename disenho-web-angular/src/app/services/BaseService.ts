@@ -44,7 +44,7 @@ export class BaseService<T> {
   private apiUrlPlural: string;
 
   constructor(
-    private http: HttpClient,
+    protected http: HttpClient,
     @Inject(STRING_TOKEN) private uriSingular: string,
     @Inject(STRING_TOKEN) private uriPlural: string
   ) {
@@ -70,5 +70,9 @@ export class BaseService<T> {
 
   delete(id: string | number): Observable<any> {
     return this.http.delete<any>(`${this.apiUrlSingular}/${id}`);
+  }
+
+  getAllIds(urlParams?: UrlParam): Observable<string[]> {
+    return this.http.get<string[]>(addUrlParams(`${this.apiUrlPlural}/ids`, urlParams));
   }
 }

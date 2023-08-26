@@ -1,0 +1,23 @@
+/* Apply styling to buttons with the .action-button class */
+.action-button {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px; /* Add spacing between buttons */
+  }
+  
+  /* Adjust styling on hover and focus for better user feedback */
+  .action-button:hover, .action-button:focus {
+    background-color: #0056b3;
+    outline: none;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-top: 20px; /* Add some top spacing */
+  }

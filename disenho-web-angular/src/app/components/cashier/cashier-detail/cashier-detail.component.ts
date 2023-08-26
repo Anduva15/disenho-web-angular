@@ -13,12 +13,12 @@ export class CashierDetailComponent implements OnInit {
   CASHIER_FORM_STRUCTURE = CASHIER_FORM_STRUCTURE;
   cashier: Cashier = {
     id: 0,
-    registrationDate: '',
+    registrationDate: new Date(),
     description: '',
     startingMoney: 0,
     closingMoney: 0,
     cashierOpeningDate: new Date(),
-    cashierClosingDate: new Date(),
+    cashierClosingDate: null,
     restaurantId: '',
   };
 
