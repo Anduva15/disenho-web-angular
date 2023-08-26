@@ -17,6 +17,17 @@
             type="checkbox"
             class="form-check-input"
           />
+          <select
+            *ngSwitchCase="'select'"
+            [formControlName]="field.name"
+            [id]="field.name"
+            class="form-select"
+          >
+            <option>--</option>
+            <option *ngFor="let option of field.options" [value]="option.value">
+              {{ option.label }}
+            </option>
+          </select>
           <input
             *ngSwitchDefault
             [id]="field.name"

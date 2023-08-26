@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { get, keyBy } from 'lodash';
 import { ClientService } from '../../../services/client.service';
 import { Client } from '../../../interfaces/client';
 import { Router } from '@angular/router';
@@ -9,6 +10,8 @@ import {
   CLIENT_FORM_STRUCTURE,
 } from '../../../constants';
 import { UrlParam } from '../../../interfaces/UrlParam';
+import { Restaurant } from 'src/app/interfaces/restaurant';
+import { RestaurantService } from 'src/app/services/restaurant.service';
 
 @Component({
   selector: 'app-client-list',
@@ -16,20 +19,41 @@ import { UrlParam } from '../../../interfaces/UrlParam';
   styleUrls: ['./client-list.component.css'],
 })
 export class ClientListComponent implements OnInit {
+  restaurants: { [id: string]: Restaurant } = {};
   clients: Client[] = [];
   CLIENT = CLIENT;
   CLIENTS = CLIENTS;
   CLIENT_FORM_STRUCTURE = CLIENT_FORM_STRUCTURE;
+  formFields = [];
 
-  constructor(private clientService: ClientService, private router: Router) {}
+  constructor(
+    private restaurantService: RestaurantService,
+    private clientService: ClientService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.loadClients();
+    this.restaurantService.getAll().subscribe((restaurants) => {
+      this.restaurants = keyBy(restaurants, 'id');
+
+      this.loadClients();
+    });
   }
 
   loadClients = (urlParams?: UrlParam | undefined) => {
     this.clientService.getAll(urlParams).subscribe((clients) => {
-      this.clients = clients;
+      const asd = clients.map((c) => {
+        const restaurant = this.restaurants[c.id];
+
+        return {
+          ...c,
+          restaurantId: restaurant?.name,
+        };
+      });
+
+      console.log({ asd });
+
+      this.clients = asd;
     });
   };
 
@@ -38,7 +62,7 @@ export class ClientListComponent implements OnInit {
   }
 
   deleteUser = (clientId: string) => {
-    if (confirm('Are you sure you want to delete this client?')) {
+    if (confirm('Estas seguro que deseas borrar este cliente?')) {
       this.clientService.delete(clientId).subscribe(() => {
         this.clientService.getAll().subscribe((u) => {
           this.clients = u;

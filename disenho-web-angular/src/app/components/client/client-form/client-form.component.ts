@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CLIENTS, CLIENT_FORM_STRUCTURE } from '../../../constants';
 import { ClientService } from '../../../services/client.service';
 import { Client } from '../../../interfaces/client';
+import { RestaurantService } from 'src/app/services/restaurant.service';
 
 @Component({
   selector: 'app-client-form',
@@ -14,7 +15,7 @@ import { Client } from '../../../interfaces/client';
 export class ClientFormComponent {
   isNew: boolean = true;
   formFields = CLIENT_FORM_STRUCTURE;
-
+  CLIENT_FORM_STRUCTURE = CLIENT_FORM_STRUCTURE;
   client: Client = {
     id: 0,
     name: '',
@@ -27,11 +28,25 @@ export class ClientFormComponent {
 
   constructor(
     private clientService: ClientService,
+    private restaurantService: RestaurantService,
     private route: ActivatedRoute,
     private router: Router
   ) {}
 
   ngOnInit(): void {
+    this.restaurantService.getAll().subscribe((restaurants) => {
+      const restaurantsSelect: Array<{ label: string; value: any }> = (
+        restaurants || []
+      ).map((r) => ({
+        label: r.name,
+        value: r.id,
+      }));
+
+      this.formFields = CLIENT_FORM_STRUCTURE.map((c) =>
+        c.name === 'restaurantId' ? { ...c, options: restaurantsSelect } : c
+      );
+    });
+
     this.route.params.subscribe((params) => {
       if (params['id']) {
         // Load client data if editing an existing client

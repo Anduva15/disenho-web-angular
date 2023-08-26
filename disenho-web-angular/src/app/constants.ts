@@ -1,3 +1,4 @@
+import { Validators } from '@angular/forms';
 import { FormItem } from './interfaces/FormItem';
 // import { Validators } from '@angular/forms';
 
@@ -270,13 +271,6 @@ export const CLIENT_FORM_STRUCTURE: FormItem[] = [
     inputType: 'text',
     // validators: [Validators.required],
   },
-  // se necesita ???
-  {
-    name: 'amountPayed',
-    label: 'Total pagado',
-    inputType: 'text',
-    // validators: [Validators.required, Validators.email],
-  },
   {
     name: 'products',
     label: 'Productos',
@@ -288,16 +282,42 @@ export const CLIENT_FORM_STRUCTURE: FormItem[] = [
     inputType: 'text',
     // validators: [Validators.required, Validators.minLength(6)],
   },
+  // se necesita ???
+  {
+    name: 'amountPayed',
+    label: 'Total pagado',
+    inputType: 'text',
+    // validators: [Validators.required, Validators.email],
+  },
   {
     name: 'restaurantId',
-    label: 'restaurante id',
-    inputType: 'text',
+    label: 'Restaurante',
+    inputType: 'select',
+    options: [],
   },
   {
     name: 'status',
-    label: 'estatus',
-    inputType: 'text',
-    // validators: [Validators.required, Validators.minLength(6)],
+    label: 'Estado',
+    inputType: 'select',
+    options: [
+      {
+        label: 'Reserva',
+        value: 'RESERVA',
+      },
+      {
+        label: 'Orden',
+        value: 'ORDEN',
+      },
+      {
+        label: 'Consumo',
+        value: 'CONSUMO',
+      },
+      {
+        label: 'Pago',
+        value: 'PAGO',
+      },
+    ],
+    validators: [Validators.required],
   },
 ];
 
@@ -732,7 +752,7 @@ export const BILL_FORM_STRUCTURE: FormItem[] = [
     name: 'status',
     label: 'status',
     inputType: 'text',
-  }
+  },
 ];
 export const getHeaderStructure = () => {
   // lo dejo function para poder validar los campos basados en el rol
