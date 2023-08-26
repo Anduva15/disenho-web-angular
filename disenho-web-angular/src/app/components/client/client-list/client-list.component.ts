@@ -42,7 +42,7 @@ export class ClientListComponent implements OnInit {
 
   loadClients = (urlParams?: UrlParam | undefined) => {
     this.clientService.getAll(urlParams).subscribe((clients) => {
-      const asd = clients.map((c) => {
+      this.clients = clients.map((c) => {
         const restaurant = this.restaurants[c.id];
 
         return {
@@ -50,10 +50,6 @@ export class ClientListComponent implements OnInit {
           restaurantId: restaurant?.name,
         };
       });
-
-      console.log({ asd });
-
-      this.clients = asd;
     });
   };
 

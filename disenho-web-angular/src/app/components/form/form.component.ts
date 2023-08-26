@@ -14,7 +14,14 @@ export class FormComponent implements OnInit {
   @Output() formSubmit: EventEmitter<any> = new EventEmitter<any>();
 
   form: FormGroup = this.formBuilder.group({});
-
+  dropdownSettings = {
+    singleSelection: false,
+    idField: 'value',
+    textField: 'label',
+    itemsShowLimit: 3,
+    allowSearchFilter: true,
+    enableCheckAll: false,
+  };
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit() {}

@@ -28,10 +28,22 @@
               {{ option.label }}
             </option>
           </select>
+          <ng-container *ngSwitchCase="'multiselect'">
+            <div style="max-height: 40px">
+              <ng-multiselect-dropdown
+                [settings]="dropdownSettings"
+                [placeholder]="'--'"
+                [id]="field.name"
+                [data]="field.options || []"
+                [formControlName]="field.name"
+              ></ng-multiselect-dropdown>
+            </div>
+          </ng-container>
           <input
             *ngSwitchDefault
             [id]="field.name"
             [formControlName]="field.name"
+            [disabled]="field.disabled || false"
             [type]="field.inputType"
             class="form-control"
           />

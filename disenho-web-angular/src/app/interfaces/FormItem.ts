@@ -3,6 +3,7 @@ export interface FormItem {
   name: string;
   inputType: string;
   validators?: any;
+  disabled?: boolean;
   options?: Array<{
     label: string;
     value: string;

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { AuthInterceptor } from './auth.interceptor';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -85,6 +86,7 @@ import { BillFormComponent } from './components/bill/bill-form/bill-form.compone
     BillFormComponent,
   ],
   imports: [
+    NgMultiSelectDropDownModule,
     NgbModule,
     BrowserModule,
     AppRoutingModule,

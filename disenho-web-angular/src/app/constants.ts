@@ -2,6 +2,8 @@ import { Validators } from '@angular/forms';
 import { FormItem } from './interfaces/FormItem';
 // import { Validators } from '@angular/forms';
 
+const NUMBER_PATTERN = /^\d+$/;
+
 export const USER: string = 'user';
 export const USERS: string = 'users';
 export const USER_ADD: string = 'user/add';
@@ -272,24 +274,6 @@ export const CLIENT_FORM_STRUCTURE: FormItem[] = [
     // validators: [Validators.required],
   },
   {
-    name: 'products',
-    label: 'Productos',
-    inputType: 'text',
-  },
-  {
-    name: 'productsPrice',
-    label: 'Precio de productos',
-    inputType: 'text',
-    // validators: [Validators.required, Validators.minLength(6)],
-  },
-  // se necesita ???
-  {
-    name: 'amountPayed',
-    label: 'Total pagado',
-    inputType: 'text',
-    // validators: [Validators.required, Validators.email],
-  },
-  {
     name: 'restaurantId',
     label: 'Restaurante',
     inputType: 'select',
@@ -318,6 +302,27 @@ export const CLIENT_FORM_STRUCTURE: FormItem[] = [
       },
     ],
     validators: [Validators.required],
+  },
+  {
+    name: 'products',
+    label: 'Productos',
+    inputType: 'multiselect',
+    options: [],
+  },
+  {
+    name: 'productsPrice',
+    label: 'Precio de productos',
+    disabled: true,
+    inputType: 'text',
+    validators: [Validators.required, Validators.pattern(NUMBER_PATTERN)],
+  },
+  // se necesita ???
+  {
+    name: 'amountPayed',
+    label: 'Total a cancelar',
+    inputType: 'text',
+    disabled: true,
+    // validators: [Validators.required, Validators.email],
   },
 ];
 
@@ -785,23 +790,6 @@ export const getHeaderStructure = () => {
       ],
     },
     {
-      label: 'Facturas',
-      links: [
-        {
-          label: 'Lista Facturas',
-          value: BILLS,
-        },
-        {
-          label: 'Agregar Factura',
-          value: BILL_ADD,
-        },
-        {
-          label: 'Buscar Factura',
-          value: BILL,
-        },
-      ],
-    },
-    {
       label: 'Clientes',
       links: [
         {
@@ -845,7 +833,7 @@ export const getHeaderStructure = () => {
       links: [
         {
           label: 'Lista Provedores',
-          value: PROVIDER,
+          value: PROVIDERS,
         },
         {
           label: 'Agregar Provedor',
@@ -863,6 +851,23 @@ export const getHeaderStructure = () => {
         {
           label: 'Agregar Empleado',
           value: EMPLOYEE_ADD,
+        },
+      ],
+    },
+    {
+      label: 'Facturas',
+      links: [
+        {
+          label: 'Lista Facturas',
+          value: BILLS,
+        },
+        {
+          label: 'Agregar Factura',
+          value: BILL_ADD,
+        },
+        {
+          label: 'Buscar Factura',
+          value: BILL,
         },
       ],
     },
